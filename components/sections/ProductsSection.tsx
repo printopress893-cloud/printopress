@@ -79,6 +79,15 @@ const products = [
     bg: "from-yellow-50 to-sky-50",
     accent: "#58C4F6",
   },
+  {
+    title: "Promotional Materials",
+    description: "Branded merchandise, corporate gifts, and giveaways that keep you top-of-mind.",
+    emoji: "🎁",
+    gradient: "linear-gradient(135deg, #FFD447 0%, #58C4F6 100%)",
+    tag: "Trending",
+    bg: "from-yellow-50 to-sky-50",
+    accent: "#58C4F6",
+  },
 ];
 
 const productIcons = ["BC", "FL", "BR", "RB", "BX", "LB", "OS", "PM"];
@@ -105,6 +114,13 @@ const ProductImages = [
     "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1200&q=80",
   ],
   [
+    "https://images.unsplash.com/photo-1505373877841-8d25f7d46678?w=1200&q=80",
+    "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1200&q=80",
+  ],
+  [
+    "https://images.unsplash.com/photo-1505373877841-8d25f7d46678?w=1200&q=80",
+    "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1200&q=80",
+  ],[
     "https://images.unsplash.com/photo-1505373877841-8d25f7d46678?w=1200&q=80",
     "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1200&q=80",
   ],
@@ -136,6 +152,16 @@ const ProductDetails = {
       "Social media design, content direction, ads, landing visuals, and performance reporting.",
       "SEO-friendly content and campaign assets that support lead generation and awareness.",
       "A practical growth plan shaped around your budget, audience, and business goals.",
+    ],
+    [
+      "Large-format printing for banners, booths, signs, wall graphics, vehicles, and displays.",
+      "Durable materials, weather-ready finishes, and installation support when needed.",
+      "High-impact visuals prepared at the right resolution and scale for each location.",
+    ],
+    [
+      "Large-format printing for banners, booths, signs, wall graphics, vehicles, and displays.",
+      "Durable materials, weather-ready finishes, and installation support when needed.",
+      "High-impact visuals prepared at the right resolution and scale for each location.",
     ],
     [
       "Large-format printing for banners, booths, signs, wall graphics, vehicles, and displays.",
@@ -174,6 +200,16 @@ const ProductDetails = {
       "خامات قوية، تشطيبات مناسبة للعوامل الجوية، ودعم تركيب عند الحاجة.",
       "تصميمات عالية التأثير مجهزة بالدقة والمقاس المناسبين لكل موقع.",
     ],
+    [
+      "طباعة كبيرة الحجم للبنرات، الأجنحة، اللافتات، الجرافيك الجداري، السيارات، والديسبلاي.",
+      "خامات قوية، تشطيبات مناسبة للعوامل الجوية، ودعم تركيب عند الحاجة.",
+      "تصميمات عالية التأثير مجهزة بالدقة والمقاس المناسبين لكل موقع.",
+    ],
+    [
+      "طباعة كبيرة الحجم للبنرات، الأجنحة، اللافتات، الجرافيك الجداري، السيارات، والديسبلاي.",
+      "خامات قوية، تشطيبات مناسبة للعوامل الجوية، ودعم تركيب عند الحاجة.",
+      "تصميمات عالية التأثير مجهزة بالدقة والمقاس المناسبين لكل موقع.",
+    ],
   ],
 } as const;
 
@@ -186,7 +222,7 @@ export default function ProductsSection() {
         ? null
         : {
             meta: products[selectedProduct],
-            content: t.services.items[selectedProduct],
+            content: t.products.items[selectedProduct],
             details: ProductDetails[language][selectedProduct],
             images: ProductImages[selectedProduct],
           };
