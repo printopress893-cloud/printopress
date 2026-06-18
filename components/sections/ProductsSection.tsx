@@ -79,15 +79,6 @@ const products = [
     bg: "from-yellow-50 to-sky-50",
     accent: "#58C4F6",
   },
-  {
-    title: "Promotional Materials",
-    description: "Branded merchandise, corporate gifts, and giveaways that keep you top-of-mind.",
-    emoji: "🎁",
-    gradient: "linear-gradient(135deg, #FFD447 0%, #58C4F6 100%)",
-    tag: "Trending",
-    bg: "from-yellow-50 to-sky-50",
-    accent: "#58C4F6",
-  },
 ];
 
 const productIcons = ["BC", "FL", "BR", "RB", "BX", "LB", "OS", "PM"];
