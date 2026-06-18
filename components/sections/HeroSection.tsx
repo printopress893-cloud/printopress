@@ -3,8 +3,11 @@
 import { motion } from "framer-motion";
 import { ArrowRight, Play, Sparkles } from "lucide-react";
 import { fadeUp, fadeIn, staggerContainer } from "@/lib/animations";
+import { useLanguage } from "@/lib/i18n";
 
 export default function HeroSection() {
+  const { t, language } = useLanguage();
+
   const handleScroll = (href: string) => {
     const el = document.querySelector(href);
     if (el) el.scrollIntoView({ behavior: "smooth" });
@@ -17,32 +20,32 @@ export default function HeroSection() {
     >
       {/* Background Video */}
       <div className="absolute inset-0 z-0">
-        <video
-          autoPlay
-          muted
-          loop
-          playsInline
-          className="w-full h-full object-cover"
-          poster="https://images.unsplash.com/photo-1562259929-b4e1fd3aef09?w=1920&q=80"
-        >
-          {/* Fallback poster image used since we can't host actual video */}
-          <source
-            src="https://www.w3schools.com/html/mov_bbb.mp4"
-            type="video/mp4"
-          />
-        </video>
-        {/* Overlay */}
-        <div className="absolute inset-0 bg-gradient-to-br from-[#5B3A29]/85 via-[#1a1a2e]/80 to-[#16213e]/85" />
-        {/* Colorful accent overlay */}
-        <div
-          className="absolute inset-0 opacity-30"
-          style={{
-            background:
-              "radial-gradient(ellipse at 20% 50%, rgba(88,196,246,0.4) 0%, transparent 60%), radial-gradient(ellipse at 80% 50%, rgba(255,95,162,0.3) 0%, transparent 60%)",
-          }}
-        />
-      </div>
-
+  <video
+    autoPlay
+    muted
+    loop
+    playsInline
+    className="w-full h-full object-cover"
+    poster="https://images.unsplash.com/photo-1562259929-b4e1fd3aef09?w=1920&q=80"
+  >
+    {/* تم تغيير اللينك بمسار الفيديو المحلي في فولدر public */}
+    <source
+      src="/videos/my-video.mp4" 
+      type="video/mp4"
+    />
+   
+  </video>
+  
+  {/* الـ Overlays بتوعك زي ما هما */}
+  {/* <div className="absolute inset-0 bg-gradient-to-br from-[#5B3A29]/85 via-[#1a1a2e]/80 to-[#16213e]/85" />
+  <div
+    className="absolute inset-0 opacity-30"
+    style={{
+      background:
+        "radial-gradient(ellipse at 20% 50%, rgba(88,196,246,0.4) 0%, transparent 60%), radial-gradient(ellipse at 80% 50%, rgba(255,95,162,0.3) 0%, transparent 60%)",
+    }}
+  /> */}
+</div>
       {/* Floating decorative shapes */}
       <motion.div
         animate={{ y: [0, -25, 0], rotate: [0, 10, 0] }}
@@ -89,7 +92,7 @@ export default function HeroSection() {
         className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center pt-20"
       >
         {/* Badge */}
-        <motion.div variants={fadeIn} className="flex justify-center mb-8">
+        {/* <motion.div variants={fadeIn} className="flex justify-center mb-8">
           <span
             className="inline-flex items-center gap-2 px-5 py-2 rounded-full text-sm font-medium text-white border border-white/20 backdrop-blur-sm"
             style={{ background: "rgba(88,196,246,0.2)" }}
@@ -97,7 +100,7 @@ export default function HeroSection() {
             <Sparkles className="w-4 h-4 text-[#FFD447]" />
             Premium Creative Agency — Est. 2014
           </span>
-        </motion.div>
+        </motion.div> */}
 
         {/* Headline */}
         <motion.h1
@@ -105,7 +108,7 @@ export default function HeroSection() {
           className="text-5xl sm:text-6xl lg:text-8xl font-bold text-white leading-tight mb-6"
           style={{ fontFamily: "'Syne', sans-serif" }}
         >
-          Where Ideas
+          {t.hero.headlineTop}
           <br />
           <span
             style={{
@@ -115,7 +118,7 @@ export default function HeroSection() {
               backgroundClip: "text",
             }}
           >
-            Come to Life
+            {t.hero.headlineAccent}
           </span>
         </motion.h1>
 
@@ -124,9 +127,7 @@ export default function HeroSection() {
           variants={fadeUp}
           className="max-w-2xl mx-auto text-lg sm:text-xl text-white/75 leading-relaxed mb-10"
         >
-          From stunning print materials to powerful digital campaigns — we craft
-          brand experiences that leave a lasting impression. Premium quality,
-          unmatched creativity.
+          {t.hero.description}
         </motion.p>
 
         {/* CTA Buttons */}
@@ -147,8 +148,14 @@ export default function HeroSection() {
             }}
             whileTap={{ scale: 0.97 }}
           >
-            Explore Our Services
-            <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+            {t.hero.servicesCta}
+            <ArrowRight
+              className={`w-4 h-4 transition-transform ${
+                language === "ar"
+                  ? "rotate-180 group-hover:-translate-x-1"
+                  : "group-hover:translate-x-1"
+              }`}
+            />
           </motion.button>
 
           <motion.button
@@ -162,7 +169,7 @@ export default function HeroSection() {
             whileTap={{ scale: 0.97 }}
           >
             <Play className="w-4 h-4" />
-            View Our Work
+            {t.hero.workCta}
           </motion.button>
         </motion.div>
 
@@ -172,7 +179,7 @@ export default function HeroSection() {
           className="mt-20 flex flex-col items-center gap-2"
         >
           <span className="text-white/40 text-xs tracking-widest uppercase">
-            Scroll to explore
+            {t.hero.scroll}
           </span>
           <motion.div
             animate={{ y: [0, 8, 0] }}
@@ -193,12 +200,7 @@ export default function HeroSection() {
           className="rounded-2xl border border-white/15 backdrop-blur-xl px-8 py-5 flex flex-wrap justify-around gap-6"
           style={{ background: "rgba(255,255,255,0.07)" }}
         >
-          {[
-            { value: "500+", label: "Projects" },
-            { value: "120+", label: "Happy Clients" },
-            { value: "10+", label: "Years Experience" },
-            { value: "25+", label: "Team Members" },
-          ].map((stat) => (
+          {t.hero.stats.map((stat) => (
             <div key={stat.label} className="text-center">
               <div
                 className="text-2xl font-bold"

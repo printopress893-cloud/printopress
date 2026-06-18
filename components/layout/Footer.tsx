@@ -13,24 +13,16 @@ import {
   Youtube,
   ArrowRight,
 } from "lucide-react";
+import { useLanguage } from "@/lib/i18n";
 
 const quickLinks = [
-  { label: "Home", href: "#home" },
-  { label: "About Us", href: "#about" },
-  { label: "Services", href: "#services" },
-  { label: "Products", href: "#products" },
-  { label: "Clients", href: "#clients" },
-  { label: "Contact", href: "#contact" },
-];
-
-const services = [
-  "Branding & Identity",
-  "Offset Printing",
-  "Packaging Design",
-  "Digital Marketing",
-  "Large Format Print",
-  "Advertising Campaigns",
-];
+  { key: "home", href: "#home" },
+  { key: "about", href: "#about" },
+  { key: "services", href: "#services" },
+  { key: "products", href: "#products" },
+  { key: "clients", href: "#clients" },
+  { key: "contact", href: "#contact" },
+] as const;
 
 const socialLinks = [
   { icon: Facebook, href: "#", label: "Facebook", color: "#1877F2" },
@@ -41,6 +33,8 @@ const socialLinks = [
 ];
 
 export default function Footer() {
+  const { t, language } = useLanguage();
+
   const handleNavClick = (href: string) => {
     const el = document.querySelector(href);
     if (el) el.scrollIntoView({ behavior: "smooth" });
@@ -104,8 +98,7 @@ export default function Footer() {
             </div>
 
             <p className="text-white/55 text-sm leading-relaxed mb-6">
-              Cairo&apos;s premier creative production house — delivering exceptional
-              printing, branding, and digital solutions since 2014.
+              {t.footer.description}
             </p>
 
             {/* Social icons */}
@@ -140,17 +133,23 @@ export default function Footer() {
               className="text-white font-bold mb-5 text-sm uppercase tracking-widest"
               style={{ fontFamily: "'Syne', sans-serif" }}
             >
-              Quick Links
+              {t.footer.quickLinks}
             </h4>
             <ul className="space-y-2">
               {quickLinks.map((link) => (
-                <li key={link.label}>
+                <li key={link.href}>
                   <button
                     onClick={() => handleNavClick(link.href)}
                     className="flex items-center gap-2 text-white/55 text-sm hover:text-white transition-colors group"
                   >
-                    <ArrowRight className="w-3 h-3 opacity-0 group-hover:opacity-100 -translate-x-2 group-hover:translate-x-0 transition-all text-[#58C4F6]" />
-                    {link.label}
+                    <ArrowRight
+                      className={`w-3 h-3 opacity-0 group-hover:opacity-100 transition-all text-[#58C4F6] ${
+                        language === "ar"
+                          ? "rotate-180 translate-x-2 group-hover:translate-x-0"
+                          : "-translate-x-2 group-hover:translate-x-0"
+                      }`}
+                    />
+                    {t.nav[link.key]}
                   </button>
                 </li>
               ))}
@@ -163,14 +162,20 @@ export default function Footer() {
               className="text-white font-bold mb-5 text-sm uppercase tracking-widest"
               style={{ fontFamily: "'Syne', sans-serif" }}
             >
-              Services
+              {t.footer.services}
             </h4>
             <ul className="space-y-2">
-              {services.map((service) => (
-                <li key={service}>
+              {t.services.items.map((service) => (
+                <li key={service.title}>
                   <span className="flex items-center gap-2 text-white/55 text-sm hover:text-white transition-colors cursor-default group">
-                    <ArrowRight className="w-3 h-3 opacity-0 group-hover:opacity-100 -translate-x-2 group-hover:translate-x-0 transition-all text-[#FF5FA2]" />
-                    {service}
+                    <ArrowRight
+                      className={`w-3 h-3 opacity-0 group-hover:opacity-100 transition-all text-[#FF5FA2] ${
+                        language === "ar"
+                          ? "rotate-180 translate-x-2 group-hover:translate-x-0"
+                          : "-translate-x-2 group-hover:translate-x-0"
+                      }`}
+                    />
+                    {service.title}
                   </span>
                 </li>
               ))}
@@ -183,7 +188,7 @@ export default function Footer() {
               className="text-white font-bold mb-5 text-sm uppercase tracking-widest"
               style={{ fontFamily: "'Syne', sans-serif" }}
             >
-              Contact
+              {t.footer.contact}
             </h4>
             <div className="space-y-4">
               <a
@@ -220,9 +225,9 @@ export default function Footer() {
                   <MapPin className="w-3.5 h-3.5 text-[#FFD447]" />
                 </div>
                 <span className="text-sm">
-                  123 Creative St, Nasr City,
+                  {language === "ar" ? "123 شارع كرييتف، مدينة نصر،" : "123 Creative St, Nasr City,"}
                   <br />
-                  Cairo, Egypt
+                  {language === "ar" ? "القاهرة، مصر" : "Cairo, Egypt"}
                 </span>
               </div>
             </div>
@@ -235,13 +240,13 @@ export default function Footer() {
         {/* Bottom row */}
         <div className="flex flex-col sm:flex-row justify-between items-center gap-4">
           <p className="text-white/40 text-sm">
-            © {new Date().getFullYear()} Printo Press. All rights reserved.
+            © {new Date().getFullYear()} Printo Press. {t.footer.copyright}
           </p>
-          <div className="flex gap-6 text-sm text-white/40">
+          {/* <div className="flex gap-6 text-sm text-white/40">
             <button className="hover:text-white/70 transition-colors">Privacy Policy</button>
             <button className="hover:text-white/70 transition-colors">Terms of Service</button>
             <button className="hover:text-white/70 transition-colors">Sitemap</button>
-          </div>
+          </div> */}
         </div>
       </div>
     </footer>

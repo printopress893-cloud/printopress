@@ -7,19 +7,22 @@ import ClientsSection from "@/components/sections/ClientsSection";
 import ProductsSection from "@/components/sections/ProductsSection";
 import ContactSection from "@/components/sections/ContactSection";
 import WhatsAppButton from "@/components/ui/WhatsAppButton";
+import { LanguageProvider } from "@/lib/i18n";
 
 export default function Home() {
   return (
-    <main className="min-h-screen overflow-x-hidden">
-      <Navbar />
-      <HeroSection />
-      <AboutSection />
-      <ServicesSection />
-      <ClientsSection />
-      <ProductsSection />
-      <ContactSection />
-      <Footer />
-      <WhatsAppButton />
-    </main>
+    <LanguageProvider>
+      <main className="min-h-screen overflow-x-hidden">
+        <Navbar />
+        <HeroSection />
+        <AboutSection />
+        <ServicesSection />
+        <ClientsSection />
+        <ProductsSection />
+        <ContactSection />
+        <Footer />
+        <WhatsAppButton />
+      </main>
+    </LanguageProvider>
   );
 }

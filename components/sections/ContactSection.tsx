@@ -4,6 +4,7 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import { Phone, Mail, MapPin, Send, CheckCircle } from "lucide-react";
 import { fadeUp, fadeLeft, fadeRight, staggerContainer } from "@/lib/animations";
+import { useLanguage } from "@/lib/i18n";
 
 const contactInfo = [
   {
@@ -30,6 +31,7 @@ const contactInfo = [
 ];
 
 export default function ContactSection() {
+  const { t, language } = useLanguage();
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -90,14 +92,14 @@ export default function ContactSection() {
             className="inline-block text-sm font-semibold tracking-widest uppercase mb-4"
             style={{ color: "#FF5FA2" }}
           >
-            Get In Touch
+            {t.contact.eyebrow}
           </motion.span>
           <motion.h2
             variants={fadeUp}
             className="text-4xl lg:text-5xl font-bold text-[#5B3A29] mb-5"
             style={{ fontFamily: "'Syne', sans-serif" }}
           >
-            Let&apos;s Create Something{" "}
+            {t.contact.title}{" "}
             <span
               style={{
                 background: "linear-gradient(135deg, #58C4F6 0%, #FF5FA2 100%)",
@@ -106,12 +108,11 @@ export default function ContactSection() {
                 backgroundClip: "text",
               }}
             >
-              Amazing
+              {t.contact.titleAccent}
             </span>
           </motion.h2>
           <motion.p variants={fadeUp} className="text-gray-600">
-            Tell us about your project and we&apos;ll get back to you within 24
-            hours with a custom quote.
+            {t.contact.description}
           </motion.p>
         </motion.div>
 
@@ -122,26 +123,34 @@ export default function ContactSection() {
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
-            className="lg:col-span-2 space-y-6"
+            className="lg:col-span-5 space-y-6"
           >
             <div>
               <h3
                 className="text-2xl font-bold text-[#5B3A29] mb-2"
                 style={{ fontFamily: "'Syne', sans-serif" }}
               >
-                Contact Information
+                {t.contact.heading}
               </h3>
               <p className="text-gray-500 text-sm leading-relaxed">
-                We&apos;re based in Cairo and work with clients across Egypt and
-                the MENA region. Reach out however works best for you.
+                {t.contact.intro}
               </p>
             </div>
 
-            {contactInfo.map((info) => (
+            {contactInfo.map((info) => {
+              const label =
+                info.label === "Phone"
+                  ? t.contact.phone
+                  : info.label === "Email"
+                    ? t.contact.email
+                    : t.contact.address;
+              const value = info.label === "Address" ? t.contact.addressValue : info.value;
+
+              return (
               <motion.a
                 key={info.label}
                 href={info.href}
-                whileHover={{ x: 6, scale: 1.01 }}
+                whileHover={{ x: language === "ar" ? -6 : 6, scale: 1.01 }}
                 transition={{ type: "spring", stiffness: 400, damping: 20 }}
                 className="flex items-center gap-4 p-5 rounded-2xl bg-white shadow-sm border border-gray-100 hover:shadow-md transition-all group"
               >
@@ -153,16 +162,17 @@ export default function ContactSection() {
                 </div>
                 <div>
                   <div className="text-xs text-gray-400 font-medium uppercase tracking-wider mb-0.5">
-                    {info.label}
+                    {label}
                   </div>
                   <div
                     className="text-[#5B3A29] font-semibold text-sm group-hover:text-[#58C4F6] transition-colors"
                   >
-                    {info.value}
+                    {value}
                   </div>
                 </div>
               </motion.a>
-            ))}
+            );
+            })}
 
             {/* Hours */}
             <div className="p-5 rounded-2xl bg-white shadow-sm border border-gray-100">
@@ -170,23 +180,23 @@ export default function ContactSection() {
                 className="font-bold text-[#5B3A29] mb-3 text-sm"
                 style={{ fontFamily: "'Syne', sans-serif" }}
               >
-                Working Hours
+                {t.contact.hours}
               </h4>
               <div className="space-y-1.5 text-sm text-gray-600">
                 <div className="flex justify-between">
-                  <span>Saturday – Thursday</span>
-                  <span className="font-medium text-[#5B3A29]">9 AM – 7 PM</span>
+                  <span>{t.contact.weekday}</span>
+                  <span className="font-medium text-[#5B3A29]">{t.contact.weekdayHours}</span>
                 </div>
                 <div className="flex justify-between">
-                  <span>Friday</span>
-                  <span className="text-gray-400">Closed</span>
+                  <span>{t.contact.friday}</span>
+                  <span className="text-gray-400">{t.contact.closed}</span>
                 </div>
               </div>
             </div>
           </motion.div>
 
           {/* Right: Form */}
-          <motion.div
+          {/* <motion.div
             variants={fadeRight}
             initial="hidden"
             whileInView="visible"
@@ -338,7 +348,7 @@ export default function ContactSection() {
                 </form>
               )}
             </div>
-          </motion.div>
+          </motion.div> */}
         </div>
       </div>
     </section>

@@ -4,6 +4,7 @@ import { motion, useInView } from "framer-motion";
 import { useRef, useState, useEffect } from "react";
 import { Target, Eye, Award, Users } from "lucide-react";
 import { fadeUp, fadeLeft, fadeRight, staggerContainer } from "@/lib/animations";
+import { useLanguage } from "@/lib/i18n";
 
 const stats = [
   { icon: Award, value: 500, suffix: "+", label: "Projects Delivered", color: "#58C4F6" },
@@ -39,6 +40,8 @@ function Counter({ target, suffix }: { target: number; suffix: string }) {
 }
 
 export default function AboutSection() {
+  const { t } = useLanguage();
+
   return (
     <section id="about" className="py-24 lg:py-32 bg-white relative overflow-hidden">
       {/* Background decoration */}
@@ -72,13 +75,13 @@ export default function AboutSection() {
               className="inline-block text-sm font-semibold tracking-widest uppercase mb-4"
               style={{ color: "#58C4F6" }}
             >
-              Who We Are
+              {t.about.eyebrow}
             </span>
             <h2
               className="text-4xl lg:text-5xl font-bold text-[#5B3A29] leading-tight mb-6"
               style={{ fontFamily: "'Syne', sans-serif" }}
             >
-              Crafting Stories That{" "}
+              {t.about.title}{" "}
               <span
                 style={{
                   background: "linear-gradient(135deg, #58C4F6 0%, #FF5FA2 100%)",
@@ -87,14 +90,11 @@ export default function AboutSection() {
                   backgroundClip: "text",
                 }}
               >
-                Resonate
+                {t.about.titleAccent}
               </span>
             </h2>
             <p className="text-gray-600 text-lg leading-relaxed mb-8">
-              Printo Press is Cairo&apos;s leading creative production house, specializing in
-              premium printing, bold branding, and impactful advertising. With over a decade of
-              crafting visual identities, we bring brands to life with precision, passion, and
-              uncompromising quality.
+              {t.about.description}
             </p>
 
             {/* Mission & Vision */}
@@ -111,11 +111,10 @@ export default function AboutSection() {
                 </div>
                 <div>
                   <h3 className="font-bold text-[#5B3A29] mb-1" style={{ fontFamily: "'Syne', sans-serif" }}>
-                    Our Mission
+                    {t.about.missionTitle}
                   </h3>
                   <p className="text-gray-600 text-sm leading-relaxed">
-                    To empower businesses with world-class creative solutions that amplify their
-                    brand voice and drive measurable impact in a competitive marketplace.
+                    {t.about.mission}
                   </p>
                 </div>
               </div>
@@ -132,11 +131,10 @@ export default function AboutSection() {
                 </div>
                 <div>
                   <h3 className="font-bold text-[#5B3A29] mb-1" style={{ fontFamily: "'Syne', sans-serif" }}>
-                    Our Vision
+                    {t.about.visionTitle}
                   </h3>
                   <p className="text-gray-600 text-sm leading-relaxed">
-                    To be the most trusted creative partner in the MENA region — setting the standard
-                    for excellence in print, digital, and brand communication by 2030.
+                    {t.about.vision}
                   </p>
                 </div>
               </div>
@@ -205,7 +203,7 @@ export default function AboutSection() {
                       Printo Press
                     </div>
                     <div className="text-white/50 text-sm mt-1">
-                      Creative Production House
+                      {t.about.studioTag}
                     </div>
                   </div>
                 </div>
@@ -217,7 +215,7 @@ export default function AboutSection() {
                 transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
                 className="absolute -bottom-6 -left-6 bg-white rounded-2xl p-4 shadow-2xl border border-gray-100"
               >
-                <div className="flex items-center gap-3">
+                {/* <div className="flex items-center gap-3">
                   <div
                     className="w-10 h-10 rounded-xl flex items-center justify-center text-xl"
                     style={{ background: "linear-gradient(135deg, #FFD447, #FF5FA2)" }}
@@ -228,7 +226,7 @@ export default function AboutSection() {
                     <div className="text-xs text-gray-500">Recognized by</div>
                     <div className="text-sm font-bold text-[#5B3A29]">Top Agency 2024</div>
                   </div>
-                </div>
+                </div> */}
               </motion.div>
 
               {/* Floating badge 2 */}
@@ -245,8 +243,8 @@ export default function AboutSection() {
                     ✨
                   </div>
                   <div>
-                    <div className="text-xs text-gray-500">Client satisfaction</div>
-                    <div className="text-sm font-bold text-[#5B3A29]">98% Rating</div>
+                    <div className="text-xs text-gray-500">{t.about.satisfaction}</div>
+                    <div className="text-sm font-bold text-[#5B3A29]">{t.about.rating}</div>
                   </div>
                 </div>
               </motion.div>
@@ -292,7 +290,7 @@ export default function AboutSection() {
               >
                 <Counter target={stat.value} suffix={stat.suffix} />
               </div>
-              <div className="text-gray-600 text-sm font-medium">{stat.label}</div>
+              <div className="text-gray-600 text-sm font-medium">{t.about.stats[i]}</div>
 
               {/* Bottom accent line */}
               <div

@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Syne:wght@400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700&family=Syne:wght@400;500;600;700;800&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -7,6 +7,7 @@
 :root {
   --font-inter: 'Inter', sans-serif;
   --font-syne: 'Syne', sans-serif;
+  --font-cairo: 'Cairo', sans-serif;
   --brand-blue: #58C4F6;
   --brand-pink: #FF5FA2;
   --brand-yellow: #FFD447;
@@ -28,6 +29,10 @@ body {
   color: #1a1a1a;
   overflow-x: hidden;
   background-color: #ffffff;
+}
+
+html[dir="rtl"] body {
+  font-family: var(--font-cairo);
 }
 
 /* Custom Scrollbar */
@@ -95,4 +100,27 @@ body {
 /* Section padding consistency */
 .section-padding {
   @apply py-20 lg:py-28;
+}
+
+@keyframes scrollLeft {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(calc(-50% - 12px));
+  }
+}
+
+@keyframes scrollLeftRTL {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(calc(50% + 12px));
+  }
+}
+
+/* عند تحول الموقع للغة العربية، يتم تبديل الأنيميشن للحركة المعاكسة تلقائياً */
+html[dir="rtl"] .clients-track {
+  animation: scrollLeftRTL 25s linear infinite !important;
 }

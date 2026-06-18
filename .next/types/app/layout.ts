@@ -1,4 +1,4 @@
-// File: C:\Users\7orus\Desktop\printo-press\app\layout.tsx
+// File: E:\programming\projects\printo-press\printo-press\app\layout.tsx
 import * as entry from '../../../app/layout.js'
 import type { ResolvingMetadata, ResolvingViewport } from 'next/dist/lib/metadata/types/metadata-interface.js'
 

@@ -3,12 +3,17 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { useState } from "react";
 import { X } from "lucide-react";
+import { useLanguage } from "@/lib/i18n";
 
 export default function WhatsAppButton() {
   const [showTooltip, setShowTooltip] = useState(false);
+  const { t, language } = useLanguage();
+  const whatsappUrl = `https://wa.me/201212528574?text=${encodeURIComponent(
+    t.whatsapp.urlText
+  )}`;
 
   return (
-    <div className="fixed bottom-6 right-6 z-50 flex flex-col items-end gap-3">
+    <div className={`fixed bottom-6 z-50 flex flex-col gap-3 ${language === "ar" ? "left-6 items-start" : "right-6 items-end"}`}>
       {/* Tooltip / chat bubble */}
       <AnimatePresence>
         {showTooltip && (
@@ -21,7 +26,9 @@ export default function WhatsAppButton() {
           >
             <button
               onClick={() => setShowTooltip(false)}
-              className="absolute -top-2 -right-2 w-6 h-6 bg-gray-400 hover:bg-gray-500 text-white rounded-full flex items-center justify-center transition-colors"
+              className={`absolute -top-2 w-6 h-6 bg-gray-400 hover:bg-gray-500 text-white rounded-full flex items-center justify-center transition-colors ${
+                language === "ar" ? "-left-2" : "-right-2"
+              }`}
             >
               <X className="w-3 h-3" />
             </button>
@@ -33,21 +40,21 @@ export default function WhatsAppButton() {
                 <div className="text-xs font-bold text-[#5B3A29]">Printo Press</div>
                 <div className="flex items-center gap-1">
                   <div className="w-1.5 h-1.5 rounded-full bg-[#25D366]" />
-                  <span className="text-xs text-gray-400">Online</span>
+                  <span className="text-xs text-gray-400">{t.whatsapp.online}</span>
                 </div>
               </div>
             </div>
             <p className="text-sm text-gray-600 leading-relaxed">
-              👋 Hi there! How can we help with your printing needs today?
+              {t.whatsapp.message}
             </p>
             <a
-              href="https://wa.me/201000000000?text=Hello%20Printo%20Press!%20I%20would%20like%20to%20inquire%20about%20your%20services."
+              href={whatsappUrl}
               target="_blank"
               rel="noopener noreferrer"
               className="mt-3 block w-full py-2.5 rounded-xl text-white text-sm font-semibold text-center transition-all hover:opacity-90"
               style={{ background: "#25D366" }}
             >
-              Start Chat →
+              {t.whatsapp.cta}
             </a>
           </motion.div>
         )}
@@ -63,7 +70,7 @@ export default function WhatsAppButton() {
         whileTap={{ scale: 0.92 }}
         className="relative w-14 h-14 rounded-full flex items-center justify-center shadow-2xl text-white"
         style={{ background: "#25D366" }}
-        aria-label="Chat on WhatsApp"
+        aria-label={t.whatsapp.aria}
       >
         {/* Pulse rings */}
         <span

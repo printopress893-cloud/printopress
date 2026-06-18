@@ -3,19 +3,21 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, Printer } from "lucide-react";
+import { useLanguage } from "@/lib/i18n";
 
 const navLinks = [
-  { label: "Home", href: "#home" },
-  { label: "About", href: "#about" },
-  { label: "Services", href: "#services" },
-  { label: "Clients", href: "#clients" },
-  { label: "Products", href: "#products" },
-  { label: "Contact", href: "#contact" },
-];
+  { key: "home", href: "#home" },
+  { key: "about", href: "#about" },
+  { key: "services", href: "#services" },
+  { key: "clients", href: "#clients" },
+  { key: "products", href: "#products" },
+  { key: "contact", href: "#contact" },
+] as const;
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
+  const { t, toggleLanguage, language } = useLanguage();
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 50);
@@ -101,7 +103,7 @@ export default function Navbar() {
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.97 }}
                 >
-                  {link.label}
+                  {t.nav[link.key]}
                 </motion.a>
               ))}
             </div>
@@ -122,8 +124,22 @@ export default function Navbar() {
                 whileHover={{ scale: 1.05, boxShadow: "0 8px 30px rgba(88,196,246,0.4)" }}
                 whileTap={{ scale: 0.97 }}
               >
-                Get a Quote
+                {t.nav.quote}
               </motion.a>
+
+              <motion.button
+                onClick={toggleLanguage}
+                className={`min-w-20 px-4 py-2.5 rounded-full text-sm font-semibold border transition-all ${
+                  scrolled
+                    ? "border-[#5B3A29]/15 text-[#5B3A29] hover:bg-[#58C4F6]/10"
+                    : "border-white/30 text-white hover:bg-white/10"
+                }`}
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.97 }}
+                aria-label={language === "ar" ? "Switch to English" : "Switch to Arabic"}
+              >
+                {t.nav.toggle}
+              </motion.button>
 
               {/* Mobile menu toggle */}
               <motion.button
@@ -132,7 +148,7 @@ export default function Navbar() {
                 }`}
                 onClick={() => setMobileOpen(!mobileOpen)}
                 whileTap={{ scale: 0.9 }}
-                aria-label="Toggle menu"
+                aria-label={t.nav.menu}
               >
                 {mobileOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
               </motion.button>
@@ -160,12 +176,12 @@ export default function Navbar() {
                     e.preventDefault();
                     handleNavClick(link.href);
                   }}
-                  initial={{ opacity: 0, x: -20 }}
+                  initial={{ opacity: 0, x: language === "ar" ? 20 : -20 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ delay: i * 0.06 }}
                   className="px-4 py-3 rounded-xl text-[#5B3A29] font-medium hover:bg-[#58C4F6]/10 hover:text-[#58C4F6] transition-colors"
                 >
-                  {link.label}
+                  {t.nav[link.key]}
                 </motion.a>
               ))}
               <motion.a
@@ -182,7 +198,7 @@ export default function Navbar() {
                   background: "linear-gradient(135deg, #58C4F6 0%, #FF5FA2 100%)",
                 }}
               >
-                Get a Quote
+                {t.nav.quote}
               </motion.a>
             </div>
           </motion.div>
