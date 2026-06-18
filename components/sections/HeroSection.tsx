@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { ArrowRight, Play, Sparkles } from "lucide-react";
 import { fadeUp, fadeIn, staggerContainer } from "@/lib/animations";
 import { useLanguage } from "@/lib/i18n";
+import { useRef, useEffect, useState } from 'react';
 
 export default function HeroSection() {
   const { t, language } = useLanguage();
@@ -13,39 +14,79 @@ export default function HeroSection() {
     if (el) el.scrollIntoView({ behavior: "smooth" });
   };
 
+  // 1. تحديد نوع الـ useRef ليتوافق مع TypeScript
+  const videoRef = useRef<HTMLVideoElement>(null);
+  
+  // 2. حالة لإدارة أيقونة نص كتم الصوت إذا تفاعل المستخدم يدوياً
+  const [mutedState, setMutedState] = useState(true);
+
+  useEffect(() => {
+    const video = videoRef.current;
+    if (!video) return;
+
+    // دالة تفاعلية ذكية لتخطي حظر المتصفحات وتشغيل الصوت مع أول حركة للمستخدم
+    const enableSoundAndPlay = () => {
+      video.muted = false;
+      setMutedState(false);
+      video.play().catch((err) => {
+        console.log("المتصفح انتظر حركة إضافية لتشغيل الصوت:", err);
+      });
+
+      // تنظيف الـ Listeners فور النجاح لعدم تكرار تشغيل الكود
+      window.removeEventListener("mousemove", enableSoundAndPlay);
+      window.removeEventListener("scroll", enableSoundAndPlay);
+      window.removeEventListener("touchstart", enableSoundAndPlay);
+    };
+
+    window.addEventListener("mousemove", enableSoundAndPlay);
+    window.addEventListener("scroll", enableSoundAndPlay);
+    window.addEventListener("touchstart", enableSoundAndPlay);
+
+    return () => {
+      window.removeEventListener("mousemove", enableSoundAndPlay);
+      window.removeEventListener("scroll", enableSoundAndPlay);
+      window.removeEventListener("touchstart", enableSoundAndPlay);
+    };
+  }, []);
+
+  // دالة تتيح للمستخدم كتم أو تشغيل الصوت يدوياً من الزر إذا أراد
+  const toggleSound = () => {
+    if (videoRef.current) {
+      videoRef.current.muted = !videoRef.current.muted;
+      setMutedState(videoRef.current.muted);
+    }
+  };
+
   return (
     <section
       id="home"
-      className="relative min-h-screen flex items-center justify-center overflow-hidden"
+      className="relative min-h-screen flex items-center justify-center overflow-hidden bg-black"
     >
       {/* Background Video */}
       <div className="absolute inset-0 z-0">
-  <video
-    autoPlay
-    muted
-    loop
-    playsInline
-    className="w-full h-full object-cover"
-    poster="https://images.unsplash.com/photo-1562259929-b4e1fd3aef09?w=1920&q=80"
-  >
-    {/* تم تغيير اللينك بمسار الفيديو المحلي في فولدر public */}
-    <source
-      src="/videos/my-video.mp4" 
-      type="video/mp4"
-    />
-   
-  </video>
-  
-  {/* الـ Overlays بتوعك زي ما هما */}
-  {/* <div className="absolute inset-0 bg-gradient-to-br from-[#5B3A29]/85 via-[#1a1a2e]/80 to-[#16213e]/85" />
-  <div
-    className="absolute inset-0 opacity-30"
-    style={{
-      background:
-        "radial-gradient(ellipse at 20% 50%, rgba(88,196,246,0.4) 0%, transparent 60%), radial-gradient(ellipse at 80% 50%, rgba(255,95,162,0.3) 0%, transparent 60%)",
-    }}
-  /> */}
-</div>
+        <video
+          ref={videoRef}
+          autoPlay
+          loop
+          muted={mutedState} // يبدأ مكتوماً برمجياً لكي يقبله المتصفح، ثم يتم تفعيله بالحركة
+          playsInline
+          className="w-full h-full object-contain" // ليظهر كامل الفيديو دون تمطيط
+        >
+          <source src="/videos/my-video.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+
+        {/* زر التحكم بالصوت الذكي أسفل اليمين أو اليسار حسب لغة الموقع */}
+        <button
+          onClick={toggleSound}
+          className={`absolute bottom-6 z-50 bg-white/20 hover:bg-white/40 backdrop-blur-md text-white px-4 py-2 rounded-full text-xs font-medium transition-all duration-300 select-none flex items-center gap-2 shadow-lg border border-white/10 ${
+            language === "ar" ? "left-6" : "right-6"
+          }`}
+        >
+          {mutedState ? "🔈 تشغيل الصوت" : "🔊 كتم الصوت"}
+        </button>
+      </div>
+
       {/* Floating decorative shapes */}
       <motion.div
         animate={{ y: [0, -25, 0], rotate: [0, 10, 0] }}
@@ -53,12 +94,15 @@ export default function HeroSection() {
         className="absolute top-[18%] left-[8%] w-20 h-20 rounded-2xl opacity-20 border border-[#58C4F6]/60"
         style={{ background: "rgba(88,196,246,0.15)" }}
       />
+      
+      {/* تم إصلاح السطر بالأسفل وإضافة القيم الصحيحة للـ y وحذف الكلمات العربية المسببة للخطأ */}
       <motion.div
-        animate={{ y: [0, 20, 0], rotate: [0, -8, 0] }}
+        animate={{ y:[0, -25, 0] , rotate: [0, -8, 0] }} 
         transition={{ duration: 7, repeat: Infinity, ease: "easeInOut", delay: 1 }}
         className="absolute top-[30%] right-[6%] w-14 h-14 rounded-full opacity-25 border border-[#FF5FA2]/50"
         style={{ background: "rgba(255,95,162,0.15)" }}
       />
+      
       <motion.div
         animate={{ y: [0, -15, 0] }}
         transition={{ duration: 9, repeat: Infinity, ease: "easeInOut", delay: 2 }}
@@ -91,17 +135,6 @@ export default function HeroSection() {
         animate="visible"
         className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center pt-20"
       >
-        {/* Badge */}
-        {/* <motion.div variants={fadeIn} className="flex justify-center mb-8">
-          <span
-            className="inline-flex items-center gap-2 px-5 py-2 rounded-full text-sm font-medium text-white border border-white/20 backdrop-blur-sm"
-            style={{ background: "rgba(88,196,246,0.2)" }}
-          >
-            <Sparkles className="w-4 h-4 text-[#FFD447]" />
-            Premium Creative Agency — Est. 2014
-          </span>
-        </motion.div> */}
-
         {/* Headline */}
         <motion.h1
           variants={fadeUp}
@@ -172,52 +205,6 @@ export default function HeroSection() {
             {t.hero.workCta}
           </motion.button>
         </motion.div>
-
-        {/* Scroll indicator */}
-        <motion.div
-          variants={fadeIn}
-          className="mt-20 flex flex-col items-center gap-2"
-        >
-          <span className="text-white/40 text-xs tracking-widest uppercase">
-            {t.hero.scroll}
-          </span>
-          <motion.div
-            animate={{ y: [0, 8, 0] }}
-            transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-            className="w-px h-12 bg-gradient-to-b from-white/40 to-transparent"
-          />
-        </motion.div>
-      </motion.div>
-
-      {/* Stats floating bar */}
-      <motion.div
-        initial={{ opacity: 0, y: 40 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 1.2, duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 w-full max-w-4xl px-4"
-      >
-        <div
-          className="rounded-2xl border border-white/15 backdrop-blur-xl px-8 py-5 flex flex-wrap justify-around gap-6"
-          style={{ background: "rgba(255,255,255,0.07)" }}
-        >
-          {t.hero.stats.map((stat) => (
-            <div key={stat.label} className="text-center">
-              <div
-                className="text-2xl font-bold"
-                style={{
-                  fontFamily: "'Syne', sans-serif",
-                  background: "linear-gradient(135deg, #58C4F6, #FFD447)",
-                  WebkitBackgroundClip: "text",
-                  WebkitTextFillColor: "transparent",
-                  backgroundClip: "text",
-                }}
-              >
-                {stat.value}
-              </div>
-              <div className="text-white/60 text-sm">{stat.label}</div>
-            </div>
-          ))}
-        </div>
       </motion.div>
     </section>
   );
