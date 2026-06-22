@@ -115,7 +115,7 @@ export default function ClientsSection() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-12 text-center">
         <p className="text-gray-400 text-sm">
           {t.clients.notePrefix}{" "}
-          <span className="font-semibold text-[#58C4F6]">{t.clients.noteAccent}</span>{" "}
+          <span className="font-semibold text-[#00FFFF]">{t.clients.noteAccent}</span>{" "}
           {t.clients.noteSuffix}
         </p>
       </div>

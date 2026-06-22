@@ -7,10 +7,10 @@ import { fadeUp, fadeLeft, fadeRight, staggerContainer } from "@/lib/animations"
 import { useLanguage } from "@/lib/i18n";
 
 const stats = [
-  { icon: Award, value: 500, suffix: "+", label: "Projects Delivered", color: "#58C4F6" },
-  { icon: Users, value: 120, suffix: "+", label: "Happy Clients", color: "#FF5FA2" },
-  { icon: Target, value: 10, suffix: "+", label: "Years Experience", color: "#FFD447" },
-  { icon: Users, value: 25, suffix: "+", label: "Team Members", color: "#5B3A29" },
+  { icon: Award, value: 500, suffix: "+", label: "Projects Delivered", color: "#00FFFF" },
+  { icon: Users, value: 120, suffix: "+", label: "Happy Clients", color: "#FF00FF" },
+  { icon: Target, value: 10, suffix: "+", label: "Years Experience", color: "#FFFF00" },
+  { icon: Users, value: 25, suffix: "+", label: "Team Members", color: "#000000" },
 ];
 
 function Counter({ target, suffix }: { target: number; suffix: string }) {
@@ -73,22 +73,17 @@ export default function AboutSection() {
           <motion.div variants={fadeLeft} className="order-2 lg:order-1">
             <span
               className="inline-block text-sm font-semibold tracking-widest uppercase mb-4"
-              style={{ color: "#58C4F6" }}
+              style={{ color: "#00FFFF" }}
             >
               {t.about.eyebrow}
             </span>
             <h2
-              className="text-4xl lg:text-5xl font-bold text-[#5B3A29] leading-tight mb-6"
+              className="text-4xl lg:text-5xl font-bold text-[#000000] leading-tight mb-6"
               style={{ fontFamily: "'Syne', sans-serif" }}
             >
               {t.about.title}{" "}
               <span
-                style={{
-                  background: "linear-gradient(135deg, #58C4F6 0%, #FF5FA2 100%)",
-                  WebkitBackgroundClip: "text",
-                  WebkitTextFillColor: "transparent",
-                  backgroundClip: "text",
-                }}
+                style={{ color: "#FF00FF" }}
               >
                 {t.about.titleAccent}
               </span>
@@ -146,18 +141,20 @@ export default function AboutSection() {
             variants={fadeRight}
             className="order-1 lg:order-2 relative"
           >
-            <div className="relative">
-              {/* Main image block */}
-              <div
-                className="rounded-3xl overflow-hidden shadow-2xl"
-                style={{
-                  background: "linear-gradient(135deg, #5B3A29 0%, #3a2419 100%)",
-                  minHeight: "480px",
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "center",
-                }}
+            <div
+                className="relative"
               >
+                {/* Main image block */}
+                <div
+                  className="rounded-3xl overflow-hidden shadow-2xl"
+                  style={{
+                    background: "#000000",
+                    minHeight: "480px",
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                  }}
+                >
                 {/* Abstract brand visual */}
                 <div className="relative w-full h-full flex items-center justify-center p-10">
                   {/* Big letter P */}
@@ -179,9 +176,12 @@ export default function AboutSection() {
                     </span>
                   </div>
                   {/* Floating colored circles */}
-                  <div className="absolute top-10 left-10 w-24 h-24 rounded-full" style={{ background: "linear-gradient(135deg, #58C4F6, rgba(88,196,246,0.3))", filter: "blur(2px)" }} />
-                  <div className="absolute bottom-10 right-10 w-20 h-20 rounded-full" style={{ background: "linear-gradient(135deg, #FF5FA2, rgba(255,95,162,0.3))", filter: "blur(2px)" }} />
-                  <div className="absolute top-1/2 right-10 w-14 h-14 rounded-full" style={{ background: "linear-gradient(135deg, #FFD447, rgba(255,212,71,0.3))", filter: "blur(2px)" }} />
+                  <div
+                  className="absolute top-10 left-10 w-24 h-24 rounded-full" style={{ background: "#00FFFF", filter: "blur(2px)" }} />
+                <div
+                  className="absolute bottom-10 right-10 w-20 h-20 rounded-full" style={{ background: "#FF00FF", filter: "blur(2px)" }} />
+                <div
+                  className="absolute top-1/2 right-10 w-14 h-14 rounded-full" style={{ background: "#FFFF00", filter: "blur(2px)" }} />
 
                   {/* Center logo */}
                   <div className="relative z-10 text-center">
@@ -235,16 +235,18 @@ export default function AboutSection() {
                 transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 1 }}
                 className="absolute -top-6 -right-6 bg-white rounded-2xl p-4 shadow-2xl border border-gray-100"
               >
-                <div className="flex items-center gap-3">
+                <div
+                  className="flex items-center gap-3"
+                >
                   <div
                     className="w-10 h-10 rounded-xl flex items-center justify-center text-xl"
-                    style={{ background: "linear-gradient(135deg, #58C4F6, #FF5FA2)" }}
+                    style={{ background: "#00FFFF" }}
                   >
                     ✨
                   </div>
                   <div>
                     <div className="text-xs text-gray-500">{t.about.satisfaction}</div>
-                    <div className="text-sm font-bold text-[#5B3A29]">{t.about.rating}</div>
+                    <div className="text-sm font-bold text-[#000000]">{t.about.rating}</div>
                   </div>
                 </div>
               </motion.div>

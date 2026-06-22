@@ -8,10 +8,10 @@
   --font-inter: 'Inter', sans-serif;
   --font-syne: 'Syne', sans-serif;
   --font-cairo: 'Cairo', sans-serif;
-  --brand-blue: #58C4F6;
-  --brand-pink: #FF5FA2;
-  --brand-yellow: #FFD447;
-  --brand-brown: #5B3A29;
+  --brand-cyan: #00FFFF;
+  --brand-magenta: #FF00FF;
+  --brand-yellow: #FFFF00;
+  --brand-black: #000000;
 }
 
 * {
@@ -39,30 +39,31 @@ html[dir="rtl"] body {
 ::-webkit-scrollbar {
   width: 6px;
 }
+
 ::-webkit-scrollbar-track {
   background: #f1f1f1;
 }
+
 ::-webkit-scrollbar-thumb {
-  background: var(--brand-blue);
+  background: var(--brand-cyan);
   border-radius: 3px;
 }
+
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--brand-pink);
+  background: var(--brand-magenta);
 }
 
-/* Gradient Text Utility */
-.gradient-text {
-  background: linear-gradient(135deg, #58C4F6 0%, #FF5FA2 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+/* Solid Color Text Utilities */
+.cyan-text {
+  color: var(--brand-cyan);
 }
 
-.gradient-text-warm {
-  background: linear-gradient(135deg, #FF5FA2 0%, #FFD447 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+.magenta-text {
+  color: var(--brand-magenta);
+}
+
+.yellow-text {
+  color: var(--brand-yellow);
 }
 
 /* Noise texture overlay for premium feel */
@@ -83,8 +84,8 @@ html[dir="rtl"] body {
 /* Form focus styles */
 .form-input:focus {
   outline: none;
-  border-color: var(--brand-blue);
-  box-shadow: 0 0 0 3px rgba(88, 196, 246, 0.15);
+  border-color: var(--brand-cyan);
+  box-shadow: 0 0 0 3px rgba(0, 255, 255, 0.15);
 }
 
 /* Floating shape styles */
@@ -106,6 +107,7 @@ html[dir="rtl"] body {
   0% {
     transform: translateX(0);
   }
+
   100% {
     transform: translateX(calc(-50% - 12px));
   }
@@ -115,6 +117,7 @@ html[dir="rtl"] body {
   0% {
     transform: translateX(0);
   }
+
   100% {
     transform: translateX(calc(50% + 12px));
   }

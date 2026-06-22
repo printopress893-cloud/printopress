@@ -13,71 +13,72 @@ const products = [
     title: "Business Cards",
     description: "Premium spot-UV, foil, and embossed cards that make a powerful first impression.",
     emoji: "💳",
-    gradient: "linear-gradient(135deg, #58C4F6 0%, #9b87f5 100%)",
+    color: "#00FFFF",
     tag: "Most Popular",
-    bg: "from-blue-50 to-purple-50",
-    accent: "#58C4F6",
+    bg: "from-cyan-50 to-cyan-100",
+    accent: "#00FFFF",
   },
   {
     title: "Flyers",
     description: "Vibrant single or double-sided flyers for events, promos, and marketing campaigns.",
     emoji: "📄",
-    gradient: "linear-gradient(135deg, #FF5FA2 0%, #FFD447 100%)",
+    color: "#FF00FF",
     tag: "Best Value",
-    bg: "from-pink-50 to-yellow-50",
-    accent: "#58C4F6",
+    bg: "from-magenta-50 to-magenta-100",
+    accent: "#FF00FF",
   },
   {
     title: "Brochures",
     description: "Tri-fold and multi-page brochures that tell your brand story with authority.",
     emoji: "📖",
-    gradient: "linear-gradient(135deg, #58C4F6 0%, #FF5FA2 100%)",
+    color: "#FFFF00",
     tag: null,
-    bg: "from-sky-50 to-pink-50",
-    accent: "#58C4F6",
+    bg: "from-yellow-50 to-yellow-100",
+    accent: "#FFFF00",
   },
   {
     title: "Roll-Up Banners",
     description: "High-resolution pull-up banners for exhibitions, trade shows, and retail.",
     emoji: "🚩",
-    gradient: "linear-gradient(135deg, #FFD447 0%, #FF5FA2 100%)",
+    color: "#00FFFF",
     tag: "Fast Delivery",
-    bg: "from-yellow-50 to-pink-50",
-    accent: "#58C4F6",
+    bg: "from-cyan-50 to-cyan-100",
+    accent: "#00FFFF",
   },
   {
     title: "Packaging Boxes",
     description: "Custom-designed packaging that elevates your product and delights customers.",
     emoji: "📦",
-    gradient: "linear-gradient(135deg, #5B3A29 0%, #FF5FA2 100%)",
+    color: "#FF00FF",
     tag: "Custom",
-    bg: "from-orange-50 to-pink-50",
-    accent: "#58C4F6",
+    bg: "from-magenta-50 to-magenta-100",
+    accent: "#FF00FF",
   },
   {
     title: "Stickers & Labels",
     description: "Die-cut stickers, labels, and decals in any shape — waterproof and long-lasting.",
     emoji: "🏷️",
-    gradient: "linear-gradient(135deg, #58C4F6 0%, #FFD447 100%)",
+    color: "#FFFF00",
     tag: null,
-    bg: "from-blue-50 to-yellow-50",
+    bg: "from-yellow-50 to-yellow-100",
   },
   {
     title: "Outdoor Signs",
     description: "Channel letters, LED signs, and hoarding boards that demand attention.",
     emoji: "🔆",
-    gradient: "linear-gradient(135deg, #FF5FA2 0%, #5B3A29 100%)",
+    color: "#000000",
     tag: "Premium",
-    bg: "from-pink-50 to-orange-50",
+    bg: "from-gray-50 to-gray-100",
+    accent: "#000000",
   },
   {
     title: "Promotional Materials",
     description: "Branded merchandise, corporate gifts, and giveaways that keep you top-of-mind.",
     emoji: "🎁",
-    gradient: "linear-gradient(135deg, #FFD447 0%, #58C4F6 100%)",
+    color: "#00FFFF",
     tag: "Trending",
-    bg: "from-yellow-50 to-sky-50",
-    accent: "#58C4F6",
+    bg: "from-cyan-50 to-cyan-100",
+    accent: "#00FFFF",
   },
 ];
 
@@ -223,23 +224,23 @@ export default function ProductsSection() {
     <section
       id="products"
       className="py-24 lg:py-32 relative overflow-hidden"
-      style={{ background: "linear-gradient(180deg, #fff8f0 0%, #f0faff 100%)" }}
-    >
-      {/* Decorative blobs */}
-      <div
-        className="absolute top-0 right-0 w-96 h-96 opacity-20 pointer-events-none"
-        style={{
-          background: "radial-gradient(circle, #FFD447, transparent 70%)",
-          filter: "blur(80px)",
-        }}
-      />
-      <div
-        className="absolute bottom-0 left-0 w-96 h-96 opacity-15 pointer-events-none"
-        style={{
-          background: "radial-gradient(circle, #58C4F6, transparent 70%)",
-          filter: "blur(80px)",
-        }}
-      />
+      style={{ background: "#ffffff" }}
+      >
+        {/* Decorative blobs */}
+        <div
+          className="absolute top-0 right-0 w-96 h-96 opacity-20 pointer-events-none"
+          style={{
+            background: "radial-gradient(circle, #FFFF00, transparent 70%)",
+            filter: "blur(80px)",
+          }}
+        />
+        <div
+          className="absolute bottom-0 left-0 w-96 h-96 opacity-15 pointer-events-none"
+          style={{
+            background: "radial-gradient(circle, #00FFFF, transparent 70%)",
+            filter: "blur(80px)",
+          }}
+        />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
@@ -253,23 +254,18 @@ export default function ProductsSection() {
           <motion.span
             variants={fadeUp}
             className="inline-block text-sm font-semibold tracking-widest uppercase mb-4"
-            style={{ color: "#FFD447" }}
+            style={{ color: "#FFFF00" }}
           >
             {t.products.eyebrow}
           </motion.span>
           <motion.h2
             variants={fadeUp}
-            className="text-4xl lg:text-5xl font-bold text-[#5B3A29] mb-5"
+            className="text-4xl lg:text-5xl font-bold text-[#000000] mb-5"
             style={{ fontFamily: "'Syne', sans-serif" }}
           >
             {t.products.title}{" "}
             <span
-              style={{
-                background: "linear-gradient(135deg, #58C4F6 0%, #FF5FA2 100%)",
-                WebkitBackgroundClip: "text",
-                WebkitTextFillColor: "transparent",
-                backgroundClip: "text",
-              }}
+              style={{ color: "#00FFFF" }}
             >
               {t.products.titleAccent}
             </span>
@@ -301,7 +297,7 @@ export default function ProductsSection() {
               {/* Product image area */}
               <div
                 className="relative h-44 flex items-center justify-center overflow-hidden"
-                style={{ background: product.gradient }}
+                style={{ background: product.color }}
               >
                 {/* Abstract visual pattern */}
                 <div
@@ -342,10 +338,10 @@ export default function ProductsSection() {
                 </p>
 
                 <div
-                  className="flex items-center gap-1 text-xs font-semibold transition-all group-hover:gap-2"
-                  style={{ color: "#58C4F6" }}
-                  onClick={() => setSelectedProduct(index)}
-                >
+                className="flex items-center gap-1 text-xs font-semibold transition-all group-hover:gap-2"
+                style={{ color: "#00FFFF" }}
+                onClick={() => setSelectedProduct(index)}
+              >
                   {t.products.learnMore}
                   <ArrowUpRight
                     className={`w-3.5 h-3.5 transition-transform ${
@@ -357,10 +353,10 @@ export default function ProductsSection() {
                 </div>
               </div>
 
-              {/* Bottom gradient line */}
+              {/* Bottom solid line */}
               <div
                 className="absolute bottom-0 left-0 right-0 h-0.5 opacity-0 group-hover:opacity-100 transition-opacity"
-                style={{ background: product.gradient }}
+                style={{ background: product.color }}
               />
             </motion.div>
           );

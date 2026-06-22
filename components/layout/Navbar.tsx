@@ -58,7 +58,7 @@ export default function Navbar() {
               whileHover={{ scale: 1.03 }}
               transition={{ type: "spring", stiffness: 400, damping: 20 }}
             >
-              <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-[#58C4F6] to-[#FF5FA2] flex items-center justify-center shadow-lg">
+              <div className="w-10 h-10 rounded-xl flex items-center justify-center shadow-lg" style={{ background: "#00FFFF" }}>
                 <Printer className="w-5 h-5 text-white" />
               </div>
               <div>
@@ -75,11 +75,7 @@ export default function Navbar() {
                   style={{
                     fontFamily: "'Syne', sans-serif",
                     fontWeight: 800,
-                    background:
-                      "linear-gradient(135deg, #58C4F6 0%, #FF5FA2 100%)",
-                    WebkitBackgroundClip: "text",
-                    WebkitTextFillColor: "transparent",
-                    backgroundClip: "text",
+                    color: "#FF00FF",
                   }}
                 >
                   Press
@@ -97,9 +93,9 @@ export default function Navbar() {
                     e.preventDefault();
                     handleNavClick(link.href);
                   }}
-                  className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 hover:bg-[#58C4F6]/10 hover:text-[#58C4F6] ${
-                    scrolled ? "text-[#5B3A29]" : "text-white/90"
-                  }`}
+                  className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 hover:bg-[#00FFFF]/10 hover:text-[#00FFFF] ${
+                  scrolled ? "text-[#000000]" : "text-white/90"
+                }`}
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.97 }}
                 >
@@ -116,11 +112,10 @@ export default function Navbar() {
                   e.preventDefault();
                   handleNavClick("#contact");
                 }}
-                className="hidden md:flex items-center gap-2 px-5 py-2.5 rounded-full text-sm font-semibold text-white shadow-lg"
-                style={{
-                  background:
-                    "linear-gradient(135deg, #58C4F6 0%, #FF5FA2 100%)",
-                }}
+                className="hidden md:flex items-center gap-2 px-5 py-2.5 rounded-full text-sm font-semibold text-black shadow-lg"
+                  style={{
+                    background: "#FFFF00",
+                  }}
                 whileHover={{ scale: 1.05, boxShadow: "0 8px 30px rgba(88,196,246,0.4)" }}
                 whileTap={{ scale: 0.97 }}
               >
@@ -131,7 +126,7 @@ export default function Navbar() {
                 onClick={toggleLanguage}
                 className={`min-w-20 px-4 py-2.5 rounded-full text-sm font-semibold border transition-all ${
                   scrolled
-                    ? "border-[#5B3A29]/15 text-[#5B3A29] hover:bg-[#58C4F6]/10"
+                    ? "border-[#000000]/15 text-[#000000] hover:bg-[#00FFFF]/10"
                     : "border-white/30 text-white hover:bg-white/10"
                 }`}
                 whileHover={{ scale: 1.05 }}
@@ -144,8 +139,8 @@ export default function Navbar() {
               {/* Mobile menu toggle */}
               <motion.button
                 className={`md:hidden p-2 rounded-xl transition-colors ${
-                  scrolled ? "text-[#5B3A29]" : "text-white"
-                }`}
+                    scrolled ? "text-[#000000]" : "text-white"
+                  }`}
                 onClick={() => setMobileOpen(!mobileOpen)}
                 whileTap={{ scale: 0.9 }}
                 aria-label={t.nav.menu}
@@ -179,7 +174,7 @@ export default function Navbar() {
                   initial={{ opacity: 0, x: language === "ar" ? 20 : -20 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ delay: i * 0.06 }}
-                  className="px-4 py-3 rounded-xl text-[#5B3A29] font-medium hover:bg-[#58C4F6]/10 hover:text-[#58C4F6] transition-colors"
+                  className="px-4 py-3 rounded-xl text-[#000000] font-medium hover:bg-[#00FFFF]/10 hover:text-[#00FFFF] transition-colors"
                 >
                   {t.nav[link.key]}
                 </motion.a>
@@ -193,9 +188,9 @@ export default function Navbar() {
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.35 }}
-                className="mt-3 px-5 py-3 rounded-xl text-white text-center font-semibold"
+                className="mt-3 px-5 py-3 rounded-xl text-black text-center font-semibold"
                 style={{
-                  background: "linear-gradient(135deg, #58C4F6 0%, #FF5FA2 100%)",
+                  background: "#FFFF00",
                 }}
               >
                 {t.nav.quote}

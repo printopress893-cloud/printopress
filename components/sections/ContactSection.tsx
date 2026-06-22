@@ -12,21 +12,21 @@ const contactInfo = [
     label: "Phone",
     value: "+20 100 000 0000",
     href: "tel:+201000000000",
-    color: "#58C4F6",
+    color: "#00FFFF",
   },
   {
     icon: Mail,
     label: "Email",
     value: "hello@printopress.com",
     href: "mailto:hello@printopress.com",
-    color: "#FF5FA2",
+    color: "#FF00FF",
   },
   {
     icon: MapPin,
     label: "Address",
     value: "123 Creative St, Nasr City, Cairo, Egypt",
     href: "#",
-    color: "#FFD447",
+    color: "#FFFF00",
   },
 ];
 
@@ -60,23 +60,23 @@ export default function ContactSection() {
     <section
       id="contact"
       className="py-24 lg:py-32 relative overflow-hidden"
-      style={{ background: "linear-gradient(135deg, #fafbff 0%, #fff5fb 100%)" }}
-    >
-      {/* Background decorations */}
-      <div
-        className="absolute top-0 left-0 w-72 h-72 opacity-20 pointer-events-none"
-        style={{
-          background: "radial-gradient(circle, #58C4F6, transparent 70%)",
-          filter: "blur(60px)",
-        }}
-      />
-      <div
-        className="absolute bottom-0 right-0 w-80 h-80 opacity-15 pointer-events-none"
-        style={{
-          background: "radial-gradient(circle, #FF5FA2, transparent 70%)",
-          filter: "blur(70px)",
-        }}
-      />
+      style={{ background: "#ffffff" }}
+      >
+        {/* Background decorations */}
+        <div
+          className="absolute top-0 left-0 w-72 h-72 opacity-20 pointer-events-none"
+          style={{
+            background: "radial-gradient(circle, #00FFFF, transparent 70%)",
+            filter: "blur(60px)",
+          }}
+        />
+        <div
+          className="absolute bottom-0 right-0 w-80 h-80 opacity-15 pointer-events-none"
+          style={{
+            background: "radial-gradient(circle, #FF00FF, transparent 70%)",
+            filter: "blur(70px)",
+          }}
+        />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section header */}
@@ -90,23 +90,18 @@ export default function ContactSection() {
           <motion.span
             variants={fadeUp}
             className="inline-block text-sm font-semibold tracking-widest uppercase mb-4"
-            style={{ color: "#FF5FA2" }}
+            style={{ color: "#FF00FF" }}
           >
             {t.contact.eyebrow}
           </motion.span>
           <motion.h2
             variants={fadeUp}
-            className="text-4xl lg:text-5xl font-bold text-[#5B3A29] mb-5"
+            className="text-4xl lg:text-5xl font-bold text-[#000000] mb-5"
             style={{ fontFamily: "'Syne', sans-serif" }}
           >
             {t.contact.title}{" "}
             <span
-              style={{
-                background: "linear-gradient(135deg, #58C4F6 0%, #FF5FA2 100%)",
-                WebkitBackgroundClip: "text",
-                WebkitTextFillColor: "transparent",
-                backgroundClip: "text",
-              }}
+              style={{ color: "#00FFFF" }}
             >
               {t.contact.titleAccent}
             </span>

@@ -10,26 +10,16 @@ const config: Config = {
     extend: {
       colors: {
         brand: {
-          blue: "#58C4F6",
-          pink: "#FF5FA2",
-          yellow: "#FFD447",
-          brown: "#5B3A29",
+          cyan: "#00FFFF",
+          magenta: "#FF00FF",
+          yellow: "#FFFF00",
+          black: "#000000",
           white: "#FFFFFF",
         },
       },
       fontFamily: {
         sans: ["var(--font-inter)", "system-ui", "sans-serif"],
         display: ["var(--font-syne)", "system-ui", "sans-serif"],
-      },
-      backgroundImage: {
-        "gradient-brand":
-          "linear-gradient(135deg, #58C4F6 0%, #FF5FA2 50%, #FFD447 100%)",
-        "gradient-blue-pink":
-          "linear-gradient(135deg, #58C4F6 0%, #FF5FA2 100%)",
-        "gradient-pink-yellow":
-          "linear-gradient(135deg, #FF5FA2 0%, #FFD447 100%)",
-        "gradient-blue-yellow":
-          "linear-gradient(135deg, #58C4F6 0%, #FFD447 100%)",
       },
       animation: {
         "scroll-left": "scrollLeft 30s linear infinite",

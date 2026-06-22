@@ -21,9 +21,9 @@ const services = [
     title: "Branding",
     description:
       "Build a brand identity that tells your story. From logo design to full visual systems — we create brands people remember and trust.",
-    gradient: "linear-gradient(135deg, #58C4F6, #FF5FA2)",
-    bg: "rgba(88,196,246,0.07)",
-    accent: "#58C4F6",
+    color: "#00FFFF",
+    bg: "rgba(0,255,255,0.07)",
+    accent: "#00FFFF",
     tag: "Identity",
   },
   {
@@ -31,9 +31,9 @@ const services = [
     title: "Printing Solutions",
     description:
       "State-of-the-art digital and offset printing with meticulous quality control. Every detail, every color — pixel perfect.",
-    gradient: "linear-gradient(135deg, #FF5FA2, #FFD447)",
-    bg: "rgba(255,95,162,0.07)",
-    accent: "#FF5FA2",
+    color: "#FF00FF",
+    bg: "rgba(255,0,255,0.07)",
+    accent: "#FF00FF",
     tag: "Production",
   },
   {
@@ -41,9 +41,9 @@ const services = [
     title: "Packaging Design",
     description:
       "Packaging that protects your product and amplifies your brand. We design boxes, bags, and wrappers that convert at the shelf.",
-    gradient: "linear-gradient(135deg, #FFD447, #58C4F6)",
-    bg: "rgba(255,212,71,0.07)",
-    accent: "#FFD447",
+    color: "#FFFF00",
+    bg: "rgba(255,255,0,0.07)",
+    accent: "#FFFF00",
     tag: "Design",
   },
   {
@@ -51,9 +51,9 @@ const services = [
     title: "Advertising Campaigns",
     description:
       "Strategic advertising campaigns across print and digital that cut through the noise and get your message seen.",
-    gradient: "linear-gradient(135deg, #5B3A29, #FF5FA2)",
-    bg: "rgba(91,58,41,0.07)",
-    accent: "#5B3A29",
+    color: "#000000",
+    bg: "rgba(0,0,0,0.07)",
+    accent: "#000000",
     tag: "Strategy",
   },
   {
@@ -61,9 +61,9 @@ const services = [
     title: "Digital Marketing",
     description:
       "SEO, social media, PPC, and content marketing that grow your digital presence and drive qualified leads.",
-    gradient: "linear-gradient(135deg, #58C4F6, #5B3A29)",
-    bg: "rgba(88,196,246,0.07)",
-    accent: "#58C4F6",
+    color: "#00FFFF",
+    bg: "rgba(0,255,255,0.07)",
+    accent: "#00FFFF",
     tag: "Growth",
   },
   {
@@ -71,9 +71,9 @@ const services = [
     title: "Large Format Printing",
     description:
       "Billboards, banners, vehicle wraps, exhibition stands — commanding visual presence at any scale, indoors or out.",
-    gradient: "linear-gradient(135deg, #FF5FA2, #58C4F6)",
-    bg: "rgba(255,95,162,0.07)",
-    accent: "#FF5FA2",
+    color: "#FF00FF",
+    bg: "rgba(255,0,255,0.07)",
+    accent: "#FF00FF",
     tag: "Large Scale",
   },
 ];
@@ -325,7 +325,7 @@ export default function ServicesSection() {
               {/* Bottom accent */}
               <div
                 className="absolute bottom-0 left-0 right-0 h-1 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-b-3xl"
-                style={{ background: service.gradient }}
+                style={{ background: service.color }}
               />
             </motion.div>
           );

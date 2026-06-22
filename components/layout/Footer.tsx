@@ -41,25 +41,25 @@ export default function Footer() {
   };
 
   return (
-    <footer className="relative overflow-hidden" style={{ background: "#5B3A29" }}>
+    <footer className="relative overflow-hidden" style={{ background: "#000000" }}>
       {/* Top wave / decoration */}
       <div
         className="absolute top-0 left-0 right-0 h-1"
-        style={{ background: "linear-gradient(90deg, #58C4F6, #FF5FA2, #FFD447)" }}
+        style={{ background: "#00FFFF" }}
       />
 
       {/* Background decoration */}
       <div
         className="absolute top-0 right-0 w-96 h-96 opacity-10 pointer-events-none"
         style={{
-          background: "radial-gradient(circle, #FF5FA2, transparent 70%)",
+          background: "radial-gradient(circle, #FF00FF, transparent 70%)",
           filter: "blur(80px)",
         }}
       />
       <div
         className="absolute bottom-0 left-0 w-72 h-72 opacity-10 pointer-events-none"
         style={{
-          background: "radial-gradient(circle, #58C4F6, transparent 70%)",
+          background: "radial-gradient(circle, #00FFFF, transparent 70%)",
           filter: "blur(60px)",
         }}
       />
@@ -73,7 +73,7 @@ export default function Footer() {
             <div className="flex items-center gap-2 mb-5">
               <div
                 className="w-10 h-10 rounded-xl flex items-center justify-center"
-                style={{ background: "linear-gradient(135deg, #58C4F6, #FF5FA2)" }}
+                style={{ background: "#00FFFF" }}
               >
                 <Printer className="w-5 h-5 text-white" />
               </div>
@@ -84,15 +84,10 @@ export default function Footer() {
                 >
                   Printo
                   <span
-                    style={{
-                      background: "linear-gradient(135deg, #58C4F6, #FF5FA2)",
-                      WebkitBackgroundClip: "text",
-                      WebkitTextFillColor: "transparent",
-                      backgroundClip: "text",
-                    }}
-                  >
-                    Press
-                  </span>
+                      style={{ color: "#FF00FF" }}
+                    >
+                      Press
+                    </span>
                 </span>
               </div>
             </div>
@@ -169,7 +164,7 @@ export default function Footer() {
                 <li key={service.title}>
                   <span className="flex items-center gap-2 text-white/55 text-sm hover:text-white transition-colors cursor-default group">
                     <ArrowRight
-                      className={`w-3 h-3 opacity-0 group-hover:opacity-100 transition-all text-[#FF5FA2] ${
+                      className={`w-3 h-3 opacity-0 group-hover:opacity-100 transition-all text-[#FF00FF] ${
                         language === "ar"
                           ? "rotate-180 translate-x-2 group-hover:translate-x-0"
                           : "-translate-x-2 group-hover:translate-x-0"
@@ -197,9 +192,9 @@ export default function Footer() {
               >
                 <div
                   className="w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0 mt-0.5"
-                  style={{ background: "rgba(88,196,246,0.15)" }}
+                  style={{ background: "rgba(0,255,255,0.15)" }}
                 >
-                  <Phone className="w-3.5 h-3.5 text-[#58C4F6]" />
+                  <Phone className="w-3.5 h-3.5 text-[#00FFFF]" />
                 </div>
                 <span className="text-sm">+20 100 000 0000</span>
               </a>
@@ -220,9 +215,9 @@ export default function Footer() {
               <div className="flex items-start gap-3 text-white/55">
                 <div
                   className="w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0 mt-0.5"
-                  style={{ background: "rgba(255,212,71,0.15)" }}
+                  style={{ background: "rgba(255,255,0,0.15)" }}
                 >
-                  <MapPin className="w-3.5 h-3.5 text-[#FFD447]" />
+                  <MapPin className="w-3.5 h-3.5 text-[#FFFF00]" />
                 </div>
                 <span className="text-sm">
                   {language === "ar" ? "123 شارع كرييتف، مدينة نصر،" : "123 Creative St, Nasr City,"}

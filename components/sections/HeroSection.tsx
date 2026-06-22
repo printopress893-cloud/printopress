@@ -68,14 +68,14 @@ export default function HeroSection() {
       <motion.div
         animate={{ y: [0, -25, 0] }}
         transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
-        className="absolute top-[18%] left-[8%] w-20 h-20 rounded-2xl opacity-20 border border-[#58C4F6]/60 pointer-events-none"
-        style={{ background: "rgba(88,196,246,0.15)" }}
+        className="absolute top-[18%] left-[8%] w-20 h-20 rounded-2xl opacity-20 border border-[#00FFFF]/60 pointer-events-none"
+        style={{ background: "rgba(0,255,255,0.15)" }}
       />
       <motion.div
         animate={{ rotate: [0, -8, 0] }} 
         transition={{ duration: 7, repeat: Infinity, ease: "easeInOut", delay: 1 }}
-        className="absolute top-[30%] right-[6%] w-14 h-14 rounded-full opacity-25 border border-[#FF5FA2]/50 pointer-events-none"
-        style={{ background: "rgba(255,95,162,0.15)" }}
+        className="absolute top-[30%] right-[6%] w-14 h-14 rounded-full opacity-25 border border-[#FF00FF]/50 pointer-events-none"
+        style={{ background: "rgba(255,0,255,0.15)" }}
       />
 
       {/* Hero Content */}
@@ -87,23 +87,18 @@ export default function HeroSection() {
       >
         {/* Headline */}
         <motion.h1
-          variants={fadeUp}
-          className="text-5xl sm:text-6xl lg:text-8xl font-bold text-white leading-tight mb-6"
-          style={{ fontFamily: "'Syne', sans-serif" }}
-        >
-          {t.hero.headlineTop}
-          <br />
-          <span
-            style={{
-              background: "linear-gradient(135deg, #58C4F6 0%, #FF5FA2 60%, #FFD447 100%)",
-              WebkitBackgroundClip: "text",
-              WebkitTextFillColor: "transparent",
-              backgroundClip: "text",
-            }}
+            variants={fadeUp}
+            className="text-5xl sm:text-6xl lg:text-8xl font-bold text-white leading-tight mb-6"
+            style={{ fontFamily: "'Syne', sans-serif" }}
           >
-            {t.hero.headlineAccent}
-          </span>
-        </motion.h1>
+            {t.hero.headlineTop}
+            <br />
+            <span
+              style={{ color: "#00FFFF" }}
+            >
+              {t.hero.headlineAccent}
+            </span>
+          </motion.h1>
 
         {/* Description */}
         <motion.p
@@ -126,12 +121,12 @@ export default function HeroSection() {
             }}
             className="group flex items-center gap-2 px-8 py-4 rounded-full text-white font-semibold text-base shadow-2xl"
             style={{
-              background: "linear-gradient(135deg, #58C4F6 0%, #FF5FA2 100%)",
-              boxShadow: "0 20px 60px rgba(88,196,246,0.35)",
+              background: "#00FFFF",
+              boxShadow: "0 20px 60px rgba(0,255,255,0.35)",
             }}
             whileHover={{
               scale: 1.05,
-              boxShadow: "0 25px 70px rgba(88,196,246,0.5)",
+              boxShadow: "0 25px 70px rgba(0,255,255,0.5)",
             }}
             whileTap={{ scale: 0.97 }}
           >
