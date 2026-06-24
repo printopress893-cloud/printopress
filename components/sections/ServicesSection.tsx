@@ -276,7 +276,7 @@ export default function ServicesSection() {
               {/* Icon */}
               <div
                 className="relative w-14 h-14 rounded-2xl flex items-center justify-center mb-6 shadow-lg"
-                style={{ background: service.gradient }}
+                style={{ background: service.color }}
               >
                 <service.icon className="w-6 h-6 text-white" />
               </div>

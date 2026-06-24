@@ -59,7 +59,7 @@ export default function HeroSection() {
           playsInline
           className="w-full h-full object-contain" // يضمن ظهور أبعاد الفيديو كاملة دون قص أو تمطيط
         >
-          <source src="/videos/my-video.mp4" type="video/mp4" />
+          <source src="https://res.cloudinary.com/dniuspri6/video/upload/v1782246435/my-video_lo0iv7.mp4" type="video/mp4" />
           Your browser does not support the video tag.
         </video>
       </div>
