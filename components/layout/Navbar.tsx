@@ -1,5 +1,5 @@
 "use client";
-
+import Image from "next/image";
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, Printer } from "lucide-react";
@@ -45,44 +45,47 @@ export default function Navbar() {
             : "bg-transparent"
         }`}
       >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6  lg:px-8">
           <div className="flex items-center justify-between h-20">
             {/* Logo */}
-            <motion.a
-              href="#home"
-              onClick={(e) => {
-                e.preventDefault();
-                handleNavClick("#home");
-              }}
-              className="flex items-center gap-2 group"
-              whileHover={{ scale: 1.03 }}
-              transition={{ type: "spring", stiffness: 400, damping: 20 }}
-            >
-              <div className="w-10 h-10 rounded-xl flex items-center justify-center shadow-lg" style={{ background: "#00FFFF" }}>
-                <Printer className="w-5 h-5 text-white" />
-              </div>
-              <div>
-                <span
-                  className={`font-display font-800 text-xl tracking-tight transition-colors ${
-                    scrolled ? "text-[#5B3A29]" : "text-white"
-                  }`}
-                  style={{ fontFamily: "'Syne', sans-serif", fontWeight: 800 }}
-                >
-                  Printo
-                </span>
-                <span
-                  className="font-display text-xl"
-                  style={{
-                    fontFamily: "'Syne', sans-serif",
-                    fontWeight: 800,
-                    color: "#FF00FF",
-                  }}
-                >
-                  Press
-                </span>
-              </div>
-            </motion.a>
+          <motion.a
+            href="#home"
+            onClick={(e) => {
+              e.preventDefault();
+              handleNavClick("#home");
+            }}
+            className="flex items-center gap-2 group"
+            whileHover={{ scale: 1.03 }}
+            transition={{ type: "spring", stiffness: 400, damping: 20 }}
+          >
 
+            <Image
+              src="https://res.cloudinary.com/dniuspri6/image/upload/v1782488257/ChatGPT_Image_Jun_26_2026_06_37_02_PM_jphazu.png"
+              alt="Printo Press"
+              width={420}
+              height={100}
+              className="h-24 w-auto"
+            />
+            {/* التعديل هنا: flex-col للموبايل و md:flex-row للشاشات الأكبر */}
+            <div className="hidden md:flex flex-col md:flex-row md:items-center h-auto gap-0 md:gap-1">
+              <span
+                className="font-display font-900 text-cyan-500 text-xl tracking-tight leading-none transition-colors"
+                style={{ fontFamily: "'Syne', sans-serif", fontWeight: 800 }}
+              >
+                Printo
+              </span>
+              <span
+                className="font-display text-xl leading-none"
+                style={{
+                  fontFamily: "'Syne', sans-serif",
+                  fontWeight: 900,
+                  color: "cyan-500",
+                }}
+              >
+                Press
+              </span>
+            </div>
+          </motion.a>
             {/* Desktop Nav */}
             <div className="hidden md:flex items-center gap-1">
               {navLinks.map((link) => (
@@ -93,8 +96,8 @@ export default function Navbar() {
                     e.preventDefault();
                     handleNavClick(link.href);
                   }}
-                  className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 hover:bg-[#00FFFF]/10 hover:text-[#00FFFF] ${
-                  scrolled ? "text-[#000000]" : "text-white/90"
+                  className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 hover:bg-[cyan-500]/10 hover:text-[cyan-500] ${
+                  scrolled ? "text-[#000000]" : "text-black/90"
                 }`}
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.97 }}
@@ -126,8 +129,8 @@ export default function Navbar() {
                 onClick={toggleLanguage}
                 className={`min-w-20 px-4 py-2.5 rounded-full text-sm font-semibold border transition-all ${
                   scrolled
-                    ? "border-[#000000]/15 text-[#000000] hover:bg-[#00FFFF]/10"
-                    : "border-white/30 text-white hover:bg-white/10"
+                    ? "border-[#000000]/15 text-[#000000] hover:bg-[cyan-500]/10"
+                    : "border-white/30 text-black hover:bg-white/10"
                 }`}
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.97 }}
@@ -139,7 +142,7 @@ export default function Navbar() {
               {/* Mobile menu toggle */}
               <motion.button
                 className={`md:hidden p-2 rounded-xl transition-colors ${
-                    scrolled ? "text-[#000000]" : "text-white"
+                    scrolled ? "text-[#000000]" : "text-[#000000]"
                   }`}
                 onClick={() => setMobileOpen(!mobileOpen)}
                 whileTap={{ scale: 0.9 }}
@@ -174,7 +177,7 @@ export default function Navbar() {
                   initial={{ opacity: 0, x: language === "ar" ? 20 : -20 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ delay: i * 0.06 }}
-                  className="px-4 py-3 rounded-xl text-[#000000] font-medium hover:bg-[#00FFFF]/10 hover:text-[#00FFFF] transition-colors"
+                  className="px-4 py-3 rounded-xl text-[#000000] font-medium hover:bg-[cyan-500]/10 hover:text-[cyan-500] transition-colors"
                 >
                   {t.nav[link.key]}
                 </motion.a>

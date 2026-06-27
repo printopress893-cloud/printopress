@@ -12,6 +12,7 @@ const nextConfig = {
         hostname: 'via.placeholder.com',
       },
     ],
+    unoptimized: true,
   },
 };
 

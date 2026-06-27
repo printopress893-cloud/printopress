@@ -97,7 +97,7 @@ export default function Footer() {
             </p>
 
             {/* Social icons */}
-            <div className="flex gap-2 flex-wrap">
+            {/* <div className="flex gap-2 flex-wrap">
               {socialLinks.map((social) => (
                 <motion.a
                   key={social.label}
@@ -119,7 +119,7 @@ export default function Footer() {
                   <social.icon className="w-4 h-4 text-white/60" />
                 </motion.a>
               ))}
-            </div>
+            </div> */}
           </div>
 
           {/* Quick Links */}
@@ -196,7 +196,7 @@ export default function Footer() {
                 >
                   <Phone className="w-3.5 h-3.5 text-[#00FFFF]" />
                 </div>
-                <span className="text-sm">+20 100 000 0000</span>
+                <span className="text-sm">+201055755003</span>
               </a>
 
               <a
@@ -209,7 +209,7 @@ export default function Footer() {
                 >
                   <Mail className="w-3.5 h-3.5 text-[#FF5FA2]" />
                 </div>
-                <span className="text-sm">hello@printopress.com</span>
+                <span className="text-sm">info@printopress.com</span>
               </a>
 
               <div className="flex items-start gap-3 text-white/55">

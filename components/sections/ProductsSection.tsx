@@ -10,79 +10,146 @@ import DetailModal from "@/components/ui/DetailModal";
 
 const products = [
   {
-    title: "Business Cards",
-    description: "Premium spot-UV, foil, and embossed cards that make a powerful first impression.",
-    emoji: "💳",
-    color: "#00FFFF",
-    tag: "Most Popular",
-    bg: "from-cyan-50 to-cyan-100",
-    accent: "#00FFFF",
+  image:"https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1200&q=80",
+    title: "Books",
+    description: "Professional printing and binding for educational, academic, and commercial books.",
+    emoji: "📚",
+    gradient: "linear-gradient(135deg, #58C4F6 0%, #9b87f5 100%)",
+    tag: "Best Seller",
+    bg: "from-blue-50 to-purple-50",
+    accent: "#58C4F6",
   },
   {
-    title: "Flyers",
-    description: "Vibrant single or double-sided flyers for events, promos, and marketing campaigns.",
-    emoji: "📄",
-    color: "#FF00FF",
-    tag: "Best Value",
-    bg: "from-magenta-50 to-magenta-100",
-    accent: "#FF00FF",
-  },
-  {
+  image:"https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1200&q=80",
     title: "Brochures",
-    description: "Tri-fold and multi-page brochures that tell your brand story with authority.",
+    description: "High-quality brochures designed for marketing campaigns and business presentations.",
     emoji: "📖",
-    color: "#FFFF00",
+    gradient: "linear-gradient(135deg, #58C4F6 0%, #FF5FA2 100%)",
+    tag: "Popular",
+    bg: "from-sky-50 to-pink-50",
+    accent: "#58C4F6",
+  },
+  {
+  image:"https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1200&q=80",
+    title: "Certificates",
+    description: "Premium certificates for recognition, awards, and achievements.",
+    emoji: "🏆",
+    gradient: "linear-gradient(135deg, #FFD447 0%, #58C4F6 100%)",
+    tag: "High Quality",
+    bg: "from-yellow-50 to-sky-50",
+    accent: "#58C4F6",
+  },
+  {
+  image:"https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1200&q=80",
+    title: "Flyers",
+    description: "Eye-catching flyers that help promote your business, events, and special offers.",
+    emoji: "📄",
+    gradient: "linear-gradient(135deg, #FF5FA2 0%, #FFD447 100%)",
+    tag: "Best Value",
+    bg: "from-pink-50 to-yellow-50",
+    accent: "#58C4F6",
+  },
+  {
+  image:"https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1200&q=80",
+    title: "Catalogs",
+    description: "Professional catalogs that showcase products and services in an elegant way.",
+    emoji: "📑",
+    gradient: "linear-gradient(135deg, #58C4F6 0%, #FFD447 100%)",
     tag: null,
-    bg: "from-yellow-50 to-yellow-100",
-    accent: "#FFFF00",
+    bg: "from-blue-50 to-yellow-50",
+    accent: "#58C4F6",
   },
   {
-    title: "Roll-Up Banners",
-    description: "High-resolution pull-up banners for exhibitions, trade shows, and retail.",
-    emoji: "🚩",
-    color: "#00FFFF",
-    tag: "Fast Delivery",
-    bg: "from-cyan-50 to-cyan-100",
-    accent: "#00FFFF",
+  image:"https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1200&q=80",
+    title: "Business Cards",
+    description: "Premium business cards that strengthen your brand identity and leave a lasting impression.",
+    emoji: "💳",
+    gradient: "linear-gradient(135deg, #58C4F6 0%, #9b87f5 100%)",
+    tag: "Professional",
+    bg: "from-blue-50 to-purple-50",
+    accent: "#58C4F6",
   },
   {
-    title: "Packaging Boxes",
-    description: "Custom-designed packaging that elevates your product and delights customers.",
-    emoji: "📦",
-    color: "#FF00FF",
+  image:"https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1200&q=80",
+    title: "Envelopes",
+    description: "Custom branded envelopes designed for professional business correspondence.",
+    emoji: "✉️",
+    gradient: "linear-gradient(135deg, #FFD447 0%, #FF5FA2 100%)",
+    tag: null,
+    bg: "from-yellow-50 to-pink-50",
+    accent: "#58C4F6",
+  },
+  {
+  image:"https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1200&q=80",
+    title: "Letterheads",
+    description: "Professional letterheads that enhance your corporate identity.",
+    emoji: "📝",
+    gradient: "linear-gradient(135deg, #58C4F6 0%, #FF5FA2 100%)",
+    tag: null,
+    bg: "from-sky-50 to-pink-50",
+    accent: "#58C4F6",
+  },
+  {
+  image:"https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1200&q=80",
+    title: "Folders",
+    description: "Presentation folders for organizing documents and business materials.",
+    emoji: "📁",
+    gradient: "linear-gradient(135deg, #5B3A29 0%, #58C4F6 100%)",
+    tag: "Corporate",
+    bg: "from-orange-50 to-blue-50",
+    accent: "#58C4F6",
+  },
+  {
+  image:"https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1200&q=80",
+    title: "Folded Flyers",
+    description: "Informative folded flyers available in multiple formats and sizes.",
+    emoji: "📰",
+    gradient: "linear-gradient(135deg, #FFD447 0%, #58C4F6 100%)",
+    tag: null,
+    bg: "from-yellow-50 to-sky-50",
+    accent: "#58C4F6",
+  },
+  {
+  image:"https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1200&q=80",
+    title: "Custom Mugs",
+    description: "High-quality mug printing for promotional campaigns and corporate gifts.",
+    emoji: "☕",
+    gradient: "linear-gradient(135deg, #FF5FA2 0%, #58C4F6 100%)",
+    tag: "Popular",
+    bg: "from-pink-50 to-sky-50",
+    accent: "#58C4F6",
+  },
+  {
+  image:"https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1200&q=80",
+    title: "Custom T-Shirts",
+    description: "Premium t-shirt printing with durable colors and sharp designs.",
+    emoji: "👕",
+    gradient: "linear-gradient(135deg, #58C4F6 0%, #FFD447 100%)",
     tag: "Custom",
-    bg: "from-magenta-50 to-magenta-100",
-    accent: "#FF00FF",
+    bg: "from-blue-50 to-yellow-50",
+    accent: "#58C4F6",
   },
   {
-    title: "Stickers & Labels",
-    description: "Die-cut stickers, labels, and decals in any shape — waterproof and long-lasting.",
-    emoji: "🏷️",
-    color: "#FFFF00",
+  image:"https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1200&q=80",
+    title: "Promotional Caps",
+    description: "Branded caps ideal for events, giveaways, and marketing campaigns.",
+    emoji: "🧢",
+    gradient: "linear-gradient(135deg, #FFD447 0%, #FF5FA2 100%)",
+    tag: "Custom",
+    bg: "from-yellow-50 to-pink-50",
+    accent: "#58C4F6",
+  },
+  {
+  image:"https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1200&q=80",
+    title: "Branded Pens",
+    description: "Custom pens featuring your logo for practical and effective promotion.",
+    emoji: "🖊️",
+    gradient: "linear-gradient(135deg, #58C4F6 0%, #9b87f5 100%)",
     tag: null,
-    bg: "from-yellow-50 to-yellow-100",
-  },
-  {
-    title: "Outdoor Signs",
-    description: "Channel letters, LED signs, and hoarding boards that demand attention.",
-    emoji: "🔆",
-    color: "#000000",
-    tag: "Premium",
-    bg: "from-gray-50 to-gray-100",
-    accent: "#000000",
-  },
-  {
-    title: "Promotional Materials",
-    description: "Branded merchandise, corporate gifts, and giveaways that keep you top-of-mind.",
-    emoji: "🎁",
-    color: "#00FFFF",
-    tag: "Trending",
-    bg: "from-cyan-50 to-cyan-100",
-    accent: "#00FFFF",
+    bg: "from-blue-50 to-purple-50",
+    accent: "#58C4F6",
   },
 ];
-
-const productIcons = ["BC", "FL", "BR", "RB", "BX", "LB", "OS", "PM"];
 
 const ProductImages = [
   [
@@ -119,91 +186,153 @@ const ProductImages = [
 ] as const;
 
 const ProductDetails = {
-  en: [
-    [
-      "Complete brand strategy, logo design, color palette, typography, and visual guidelines.",
-      "Ready-to-use assets for social media, packaging, signage, stationery, and campaigns.",
-      "Built to keep your brand consistent across print, digital, and physical touchpoints.",
-    ],
-    [
-      "Digital and offset production for small batches, high-volume orders, and urgent jobs.",
-      "Color matching, paper selection, finishing options, and quality checks before delivery.",
-      "Ideal for cards, flyers, catalogs, brochures, folders, menus, and corporate material.",
-    ],
-    [
-      "Structural and visual packaging concepts for boxes, bags, sleeves, labels, and wraps.",
-      "Material recommendations, print-ready dielines, mockups, and production supervision.",
-      "Designed to protect the product and stand out clearly on shelves and deliveries.",
-    ],
-    [
-      "Campaign concepts, key visuals, copy direction, print assets, and digital adaptations.",
-      "Media-ready designs for outdoor, social media, retail, events, and launch campaigns.",
-      "Clear messaging that connects your offer with the audience you want to reach.",
-    ],
-    [
-      "Social media design, content direction, ads, landing visuals, and performance reporting.",
-      "SEO-friendly content and campaign assets that support lead generation and awareness.",
-      "A practical growth plan shaped around your budget, audience, and business goals.",
-    ],
-    [
-      "Large-format printing for banners, booths, signs, wall graphics, vehicles, and displays.",
-      "Durable materials, weather-ready finishes, and installation support when needed.",
-      "High-impact visuals prepared at the right resolution and scale for each location.",
-    ],
-    [
-      "Large-format printing for banners, booths, signs, wall graphics, vehicles, and displays.",
-      "Durable materials, weather-ready finishes, and installation support when needed.",
-      "High-impact visuals prepared at the right resolution and scale for each location.",
-    ],
-    [
-      "Large-format printing for banners, booths, signs, wall graphics, vehicles, and displays.",
-      "Durable materials, weather-ready finishes, and installation support when needed.",
-      "High-impact visuals prepared at the right resolution and scale for each location.",
-    ],
-  ],
-  ar: [
-    [
-      "استراتيجية علامة كاملة تشمل الشعار، الألوان، الخطوط، وقواعد الاستخدام البصري.",
-      "ملفات جاهزة للسوشيال ميديا، التغليف، اللافتات، المطبوعات، والحملات.",
-      "نحافظ على اتساق شكل العلامة في كل نقطة ظهور مطبوعة أو رقمية أو ميدانية.",
-    ],
-    [
-      "طباعة ديجيتال وأوفست للطلبات الصغيرة والكميات الكبيرة والأعمال العاجلة.",
-      "مطابقة ألوان، اختيار خامات، تشطيبات متنوعة، ومراجعة جودة قبل التسليم.",
-      "مناسبة للكروت، الفلايرات، الكتالوجات، البروشورات، الفولدرات، والمنيوهات.",
-    ],
-    [
-      "تصميم هيكلي وبصري للعلب، الأكياس، الأغطية، الليبلز، والتغليف المخصص.",
-      "اقتراح خامات، داي لاين جاهز للطباعة، موك آب، ومتابعة تنفيذ الإنتاج.",
-      "تصميم يحمي المنتج ويجعله واضحا ومميزا على الرف أو أثناء التوصيل.",
-    ],
-    [
-      "أفكار حملات، Key Visual، اتجاه كتابة، مواد مطبوعة، ونسخ رقمية للحملة.",
-      "تصميمات جاهزة للخارجي، السوشيال ميديا، نقاط البيع، الفعاليات، والإطلاقات.",
-      "رسالة واضحة تربط عرضك بالجمهور الذي تريد الوصول إليه.",
-    ],
-    [
-      "تصميم سوشيال ميديا، اتجاه محتوى، إعلانات، واجهات هبوط، وتقارير أداء.",
-      "محتوى وأصول تسويقية تساعد على الوعي بالعلامة وجذب العملاء المحتملين.",
-      "خطة نمو عملية مبنية على ميزانيتك وجمهورك وأهداف مشروعك.",
-    ],
-    [
-      "طباعة كبيرة الحجم للبنرات، الأجنحة، اللافتات، الجرافيك الجداري، السيارات، والديسبلاي.",
-      "خامات قوية، تشطيبات مناسبة للعوامل الجوية، ودعم تركيب عند الحاجة.",
-      "تصميمات عالية التأثير مجهزة بالدقة والمقاس المناسبين لكل موقع.",
-    ],
-    [
-      "طباعة كبيرة الحجم للبنرات، الأجنحة، اللافتات، الجرافيك الجداري، السيارات، والديسبلاي.",
-      "خامات قوية، تشطيبات مناسبة للعوامل الجوية، ودعم تركيب عند الحاجة.",
-      "تصميمات عالية التأثير مجهزة بالدقة والمقاس المناسبين لكل موقع.",
-    ],
-    [
-      "طباعة كبيرة الحجم للبنرات، الأجنحة، اللافتات، الجرافيك الجداري، السيارات، والديسبلاي.",
-      "خامات قوية، تشطيبات مناسبة للعوامل الجوية، ودعم تركيب عند الحاجة.",
-      "تصميمات عالية التأثير مجهزة بالدقة والمقاس المناسبين لكل موقع.",
-    ],
-  ],
+en: [
+[
+"Professional printing and binding for educational, academic, and commercial books.",
+"Available in multiple sizes, paper types, and binding options to suit your requirements.",
+"Produced with sharp text, accurate colors, and durable finishing for long-term use.",
+],
+[
+"High-quality brochures designed to showcase products, services, and company profiles.",
+"Available in various fold styles, paper stocks, and finishing options.",
+"Ideal for exhibitions, presentations, and marketing campaigns.",
+],
+[
+"Premium certificates for recognition, achievements, training programs, and awards.",
+"Printed on high-quality paper with optional security and finishing features.",
+"Designed to create a professional and memorable impression.",
+],
+[
+"Eye-catching flyers for promotions, events, special offers, and marketing campaigns.",
+"Available in different sizes, paper weights, and finishing options.",
+"A cost-effective solution for reaching a wide audience quickly.",
+],
+[
+"Professional catalogs that present products and services in a clear and attractive format.",
+"Available with multiple page counts, binding styles, and premium finishes.",
+"Perfect for sales presentations, showrooms, and exhibitions.",
+],
+[
+"Premium business cards designed to strengthen your brand identity.",
+"Available with spot UV, lamination, embossing, foil, and custom finishes.",
+"Created to leave a lasting impression on clients and partners.",
+],
+[
+"Custom branded envelopes suitable for official and corporate correspondence.",
+"Available in multiple sizes with high-quality printing and finishing.",
+"Designed to reinforce your professional image and brand identity.",
+],
+[
+"Professional letterheads for business communications and official documents.",
+"Printed with precise colors and premium paper options.",
+"Helps maintain a consistent and professional corporate identity.",
+],
+[
+"Presentation folders designed to organize proposals, contracts, and company documents.",
+"Available with custom pockets, finishes, and branding elements.",
+"Ideal for meetings, presentations, and corporate events.",
+],
+[
+"Folded flyers available in bi-fold, tri-fold, and custom formats.",
+"Perfect for promotional, educational, and informational materials.",
+"Printed with vibrant colors and professional finishing options.",
+],
+[
+"Custom mug printing for promotional campaigns, gifts, and corporate branding.",
+"High-quality printing ensures vibrant and long-lasting designs.",
+"A practical promotional product that keeps your brand visible daily.",
+],
+[
+"Professional t-shirt printing for events, teams, businesses, and promotions.",
+"Available in multiple sizes, colors, and printing methods.",
+"Durable prints designed for comfort and long-term use.",
+],
+[
+"Branded promotional caps for marketing campaigns, giveaways, and events.",
+"Printed or embroidered with company logos and custom artwork.",
+"A stylish way to increase brand visibility and recognition.",
+],
+[
+"Custom pens featuring your logo and corporate identity.",
+"Affordable promotional products suitable for events and business giveaways.",
+"An effective marketing tool that keeps your brand in customers' hands.",
+],
+],
+
+ar: [
+[
+"طباعة وتجليد الكتب التعليمية والأكاديمية والتجارية بجودة احترافية عالية.",
+"متوفرة بمقاسات وخامات وتجليدات متنوعة تناسب مختلف الاحتياجات.",
+"تنفيذ بدقة عالية وألوان واضحة وتشطيبات متينة للاستخدام طويل الأمد.",
+],
+[
+"بروشورات احترافية لعرض المنتجات والخدمات والملفات التعريفية للشركات.",
+"متوفرة بأشكال طي متعددة وخامات وتشطيبات متنوعة.",
+"مثالية للمعارض والعروض التسويقية والتعريفية.",
+],
+[
+"شهادات تقدير وتكريم ودورات تدريبية مطبوعة بأعلى معايير الجودة.",
+"إمكانية إضافة تشطيبات مميزة وعناصر حماية حسب الطلب.",
+"مصممة لتعكس الاحترافية وتمنح قيمة أكبر للمناسبة.",
+],
+[
+"فلايرات دعائية جذابة للعروض والفعاليات والحملات التسويقية المختلفة.",
+"متوفرة بمقاسات وخامات متعددة تناسب مختلف الاستخدامات.",
+"وسيلة فعالة واقتصادية للوصول إلى جمهور واسع.",
+],
+[
+"كتالوجات احترافية لعرض المنتجات والخدمات بشكل منظم وجذاب.",
+"متوفرة بعدد صفحات وتشطيبات وتجليدات متنوعة.",
+"مناسبة للمعارض وصالات العرض والاجتماعات التجارية.",
+],
+[
+"كروت شخصية فاخرة تعكس هوية نشاطك التجاري بصورة احترافية.",
+"متوفرة مع تشطيبات سبوت يو في، سلوفان، فويل وبروز.",
+"مصممة لترك انطباع قوي ودائم لدى العملاء والشركاء.",
+],
+[
+"أظرف مطبوعة بشعار الشركة ومخصصة للمراسلات الرسمية.",
+"متوفرة بأحجام متعددة مع طباعة عالية الجودة.",
+"تعزز الهوية المؤسسية والمظهر الاحترافي للشركة.",
+],
+[
+"ورق مراسلات احترافي للمكاتبات الرسمية والعروض التجارية.",
+"طباعة دقيقة بألوان متناسقة مع الهوية البصرية للمؤسسة.",
+"يساعد على توحيد صورة الشركة في جميع المراسلات.",
+],
+[
+"فولدرات احترافية لحفظ وتنظيم المستندات والعروض التقديمية.",
+"إمكانية إضافة جيوب داخلية وعناصر مخصصة للهوية البصرية.",
+"مثالية للاجتماعات والفعاليات والعروض التجارية.",
+],
+[
+"مطويات تعريفية وتسويقية ثنائية أو ثلاثية الطي أو حسب الطلب.",
+"مناسبة للمعلومات التسويقية والتعليمية والإرشادية.",
+"ألوان زاهية وتشطيبات احترافية تضمن مظهراً مميزاً.",
+],
+[
+"طباعة مخصصة على المجات للهدايا الدعائية والفعاليات المختلفة.",
+"ألوان ثابتة وجودة عالية تدوم لفترات طويلة.",
+"وسيلة عملية لزيادة انتشار علامتك التجارية.",
+],
+[
+"طباعة احترافية على التيشيرتات للفعاليات والشركات والفرق المختلفة.",
+"متوفرة بمقاسات وألوان متعددة مع خيارات طباعة متنوعة.",
+"تصميمات متينة ومريحة للاستخدام اليومي.",
+],
+[
+"كابات دعائية مطبوعة أو مطرزة بالشعارات والتصميمات المخصصة.",
+"مناسبة للهدايا التسويقية والفعاليات والمعارض.",
+"تساعد على تعزيز انتشار العلامة التجارية بشكل أنيق.",
+],
+[
+"أقلام دعائية مخصصة تحمل شعار الشركة وهويتها البصرية.",
+"خيار اقتصادي وفعال للهدايا التسويقية والمؤتمرات.",
+"تحافظ على ظهور علامتك التجارية بشكل مستمر لدى العملاء.",
+],
+],
 } as const;
+
 
 
 export default function ProductsSection() {
@@ -297,32 +426,18 @@ export default function ProductsSection() {
               {/* Product image area */}
               <div
                 className="relative h-44 flex items-center justify-center overflow-hidden"
-                style={{ background: product.color }}
               >
                 {/* Abstract visual pattern */}
-                <div
-                  className="absolute inset-0 opacity-20"
+                <img 
+                  src={product.image}
+                   alt={product.title}
+                  className="absolute inset-0 "
                   style={{
                     backgroundImage: `radial-gradient(circle at 25% 25%, rgba(255,255,255,0.4) 0%, transparent 50%),
                     radial-gradient(circle at 75% 75%, rgba(255,255,255,0.2) 0%, transparent 50%)`,
                   }}
                 />
 
-                {/* Emoji icon */}
-                <motion.div
-                  whileHover={{ scale: 1.2, rotate: 5 }}
-                  transition={{ type: "spring", stiffness: 300 }}
-                  className="text-6xl relative z-10 filter drop-shadow-lg"
-                >
-                  {productIcons[index]}
-                </motion.div>
-
-                {/* Tag badge */}
-                {content.tag && (
-                  <div className="absolute top-3 right-3 bg-white/90 backdrop-blur-sm text-[#5B3A29] text-xs font-bold px-3 py-1 rounded-full shadow-sm">
-                    {content.tag}
-                  </div>
-                )}
               </div>
 
               {/* Content */}
@@ -356,7 +471,6 @@ export default function ProductsSection() {
               {/* Bottom solid line */}
               <div
                 className="absolute bottom-0 left-0 right-0 h-0.5 opacity-0 group-hover:opacity-100 transition-opacity"
-                style={{ background: product.color }}
               />
             </motion.div>
           );

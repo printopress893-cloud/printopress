@@ -1,4 +1,4 @@
-// File: F:\printopress-main (1)\printopress-main\printopress\app\page.tsx
+// File: F:\printopress\app\page.tsx
 import * as entry from '../../../app/page.js'
 import type { ResolvingMetadata, ResolvingViewport } from 'next/dist/lib/metadata/types/metadata-interface.js'
 

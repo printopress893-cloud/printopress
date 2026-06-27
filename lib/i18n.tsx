@@ -40,7 +40,7 @@ export const translations = {
       headlineTop: "Where Ideas",
       headlineAccent: "Come to Life",
       description:
-        "From stunning print materials to powerful digital campaigns, we craft brand experiences that leave a lasting impression. Premium quality, unmatched creativity.",
+        "From stunning print materials , we craft brand experiences that leave a lasting impression. Premium quality, unmatched creativity.",
       servicesCta: "Explore Our Services",
       workCta: "View Our Work",
       scroll: "Scroll to explore",
@@ -56,7 +56,7 @@ export const translations = {
       title: "Crafting Stories That",
       titleAccent: "Resonate",
       description:
-        "Printo Press is Cairo's leading creative production house, specializing in premium printing, bold branding, and impactful advertising. With over a decade of crafting visual identities, we bring brands to life with precision, passion, and uncompromising quality.",
+        "Printo Press is an Egyptian company specializing in all types of paper printing—including both digital and offset—as well as indoor and outdoor printing services. The company boasts a team with over ten years of experience in the printing industry, ensuring the delivery of high-quality services that meet diverse client needs.",
       missionTitle: "Our Mission",
       mission:
         "To empower businesses with world-class creative solutions that amplify their brand voice and drive measurable impact in a competitive marketplace.",
@@ -70,7 +70,6 @@ export const translations = {
         "Projects Delivered",
         "Happy Clients",
         "Years Experience",
-        "Team Members",
       ],
     },
     services: {
@@ -82,49 +81,43 @@ export const translations = {
       learnMore: "Learn More",
       items: [
         {
-          title: "Branding",
+          title: "Digital Printing & Offset",
           description:
-            "Build a brand identity that tells your story. From logo design to full visual systems, we create brands people remember and trust.",
-          tag: "Identity",
+            "Fast, high-quality printing for books, brochures, catalogs, and commercial materials.",
+          tag: "Core Service",
         },
         {
-          title: "Printing Solutions",
+          title: "Print Finishing",
           description:
-            "State-of-the-art digital and offset printing with meticulous quality control. Every detail, every color, pixel perfect.",
-          tag: "Production",
+            "Professional finishing services including binding, lamination, cutting, and packaging.",
+          tag: "In-House",
         },
         {
-          title: "Packaging Design",
+          title: "Promotional Gift Printing",
           description:
-            "Packaging that protects your product and amplifies your brand. We design boxes, bags, and wrappers that convert at the shelf.",
-          tag: "Design",
+            "Custom printing on mugs, t-shirts, caps, pens, and promotional products.",
+          tag: "Popular",
         },
         {
-          title: "Advertising Campaigns",
+          title: "Corporate Printing Solutions",
           description:
-            "Strategic advertising campaigns across print and digital that cut through the noise and get your message seen.",
-          tag: "Strategy",
+            "Professional stationery and branded print materials for businesses and organizations.",
+          tag: "Business",
         },
         {
-          title: "Digital Marketing",
+          title: "Event Printing Solutions",
           description:
-            "SEO, social media, PPC, and content marketing that grow your digital presence and drive qualified leads.",
-          tag: "Growth",
+    "Complete printing solutions for conferences, exhibitions, corporate events, and special occasions—from badges to banners and branded materials.",
+          tag: "Events",
         },
-        {
-          title: "Large Format Printing",
-          description:
-            "Billboards, banners, vehicle wraps, exhibition stands, and commanding visual presence at any scale, indoors or out.",
-          tag: "Large Scale",
-        },
-      ],
+      ]
     },
     clients: {
-      eyebrow: "Trusted By",
-      title: "Brands That",
-      titleAccent: "Trust Us",
+      eyebrow: "",
+      title: "Trusted Across",
+      titleAccent: "the Region",
       description:
-        "From emerging startups to major enterprises, our clients rely on us to deliver exceptional creative work, every time.",
+        "Delivering exceptional creative excellence that drives growth for brands from Egypt to the heart of the Gulf and North Africa.",
       notePrefix: "Join",
       noteAccent: "120+ satisfied clients",
       noteSuffix: "who chose Printo Press for their creative needs",
@@ -138,54 +131,90 @@ export const translations = {
       learnMore: "Learn More",
       items: [
         {
-          title: "Business Cards",
+          title: "Books",
           description:
-            "Premium spot-UV, foil, and embossed cards that make a powerful first impression.",
-          tag: "Most Popular",
-        },
-        {
-          title: "Flyers",
-          description:
-            "Vibrant single or double-sided flyers for events, promos, and marketing campaigns.",
-          tag: "Best Value",
+            "Professional printing and binding for educational, academic, and commercial books.",
+          tag: "Best Seller",
         },
         {
           title: "Brochures",
           description:
-            "Tri-fold and multi-page brochures that tell your brand story with authority.",
+            "High-quality brochures designed for marketing campaigns and business presentations.",
+          tag: "Popular",
+        },
+        {
+          title: "Certificates",
+          description:
+            "Premium certificates for recognition, awards, and achievements.",
+          tag: "High Quality",
+        },
+        {
+          title: "Flyers",
+          description:
+            "Eye-catching flyers that help promote your business, events, and offers.",
+          tag: "Best Value",
+        },
+        {
+          title: "Catalogs",
+          description:
+            "Professional catalogs that showcase products and services in an elegant way.",
           tag: null,
         },
         {
-          title: "Roll-Up Banners",
+          title: "Business Cards",
           description:
-            "High-resolution pull-up banners for exhibitions, trade shows, and retail.",
-          tag: "Fast Delivery",
+            "Premium business cards that strengthen your brand identity and leave a lasting impression.",
+          tag: "Professional",
         },
         {
-          title: "Packaging Boxes",
+          title: "Envelopes",
           description:
-            "Custom-designed packaging that elevates your product and delights customers.",
+            "Custom branded envelopes designed for professional business correspondence.",
+          tag: null,
+        },
+        {
+          title: "Letterheads",
+          description:
+            "Professional letterheads that enhance your corporate identity.",
+          tag: null,
+        },
+        {
+          title: "Folders",
+          description:
+            "Presentation folders for organizing documents and business materials.",
+          tag: "Corporate",
+        },
+        {
+          title: "Folded Flyers",
+          description:
+            "Informative folded flyers available in multiple formats and sizes.",
+          tag: null,
+        },
+        {
+          title: "Custom Mugs",
+          description:
+            "High-quality mug printing for promotional campaigns and corporate gifts.",
+          tag: "Popular",
+        },
+        {
+          title: "Custom T-Shirts",
+          description:
+            "Premium t-shirt printing with durable colors and sharp designs.",
           tag: "Custom",
         },
         {
-          title: "Stickers & Labels",
+          title: "Promotional Caps",
           description:
-            "Die-cut stickers, labels, and decals in any shape, waterproof and long-lasting.",
+            "Branded caps ideal for events, giveaways, and marketing campaigns.",
+          tag: "Custom",
+        },
+        {
+          title: "Branded Pens",
+          description:
+            "Custom pens featuring your logo for practical and effective promotion.",
           tag: null,
         },
-        {
-          title: "Outdoor Signs",
-          description:
-            "Channel letters, LED signs, and hoarding boards that demand attention.",
-          tag: "Premium",
-        },
-        {
-          title: "Promotional Materials",
-          description:
-            "Branded merchandise, corporate gifts, and giveaways that keep you top-of-mind.",
-          tag: "Trending",
-        },
-      ],
+      ]
     },
     contact: {
       eyebrow: "Get In Touch",
@@ -239,7 +268,7 @@ export const translations = {
       headlineTop: "أفكارك",
       headlineAccent: "نحو واقع ملموس",
       description:
-        "من المطبوعات الاحترافية إلى الحملات الرقمية المؤثرة، نصنع تجارب بصرية تترك انطباعا قويا بجودة عالية وإبداع واضح.",
+        "من المطبوعات الاحترافية ، نصنع تجارب بصرية تترك انطباعا قويا بجودة عالية وإبداع واضح.",
       servicesCta: "استكشف خدماتنا",
       workCta: "شاهد أعمالنا",
       scroll: "مرر للاستكشاف",
@@ -255,7 +284,7 @@ export const translations = {
       title: "نصنع قصصا",
       titleAccent: "تترك أثرا",
       description:
-        "برينتو برس بيت إنتاج إبداعي في القاهرة متخصص في الطباعة عالية الجودة، وبناء الهويات البصرية، والحلول الإعلانية المؤثرة. بخبرة تتجاوز عشر سنوات، نحول العلامات التجارية إلى حضور بصري دقيق ومميز.",
+        "تُعد شركة برينتو بريس من الشركات المصرية المتخصصة في جميع أنواع الطباعة الورقية، سواء الطباعة الديجيتال أو الأوفست، بالإضافة إلى تقديم خدمات الطباعة (Indoor) و (Outdoor)، وتضم الشركة فريق عمل يمتلك خبرة تتجاوز 10 عاماً في مجال الطباعة، مما يضمن تقديم خدمات عالية الجودة تلبي احتياجات العملاء المختلفة.",
       missionTitle: "رسالتنا",
       mission:
         "تمكين الشركات بحلول إبداعية عالمية المستوى تعزز صوت العلامة التجارية وتحقق أثرا قابلا للقياس في سوق تنافسي.",
@@ -265,7 +294,7 @@ export const translations = {
       studioTag: "بيت إنتاج إبداعي",
       satisfaction: "رضا العملاء",
       rating: "تقييم 98%",
-      stats: ["مشروع مكتمل", "عميل سعيد", "سنوات خبرة", "عضو بالفريق"],
+      stats: ["مشروع مكتمل", "عميل سعيد", "سنوات خبرة",],
     },
     services: {
       eyebrow: "ماذا نقدم",
@@ -274,51 +303,45 @@ export const translations = {
       description:
         "استوديو إبداعي متكامل يبدأ من بناء الفكرة والهوية وينتهي بالإنتاج النهائي. نحن ندير الرحلة كاملة باحتراف.",
       learnMore: "اعرف المزيد",
-      items: [
-        {
-          title: "الهوية البصرية",
-          description:
-            "نبني هوية تعبر عن قصتك، من تصميم الشعار إلى النظام البصري الكامل، لنصنع علامة يتذكرها الناس ويثقون بها.",
-          tag: "هوية",
-        },
-        {
-          title: "حلول الطباعة",
-          description:
-            "طباعة ديجيتال وأوفست بأحدث التقنيات ومراجعة جودة دقيقة لكل تفصيلة وكل لون.",
-          tag: "إنتاج",
-        },
-        {
-          title: "تصميم التغليف",
-          description:
-            "تصميم عبوات تحمي منتجك وتبرز علامتك، من الصناديق إلى الأكياس والملصقات الجذابة.",
-          tag: "تصميم",
-        },
-        {
-          title: "الحملات الإعلانية",
-          description:
-            "حملات استراتيجية عبر المطبوع والرقمي تساعد رسالتك على الظهور والوصول للجمهور المناسب.",
-          tag: "استراتيجية",
-        },
-        {
-          title: "التسويق الرقمي",
-          description:
-            "تحسين محركات البحث، السوشيال ميديا، الإعلانات المدفوعة، والمحتوى الذي ينمي حضورك الرقمي.",
-          tag: "نمو",
-        },
-        {
-          title: "الطباعة كبيرة الحجم",
-          description:
-            "لافتات، بنرات، تغليف سيارات، وأجنحة معارض تمنح علامتك حضورا واضحا في أي مساحة.",
-          tag: "أحجام كبيرة",
-        },
-      ],
+      items:[
+  {
+    title: "الطباعة الرقمية والاوفسيت  ",
+    description:
+      "طباعة سريعة وعالية الجودة للكتب والبروشورات والكتالوجات والمطبوعات التجارية.",
+    tag: "الخدمة الرئيسية",
+  },
+  {
+    title: "خدمات التشطيب",
+    description:
+      "تشطيب احترافي يشمل التجليد والسلوفان والقص والتغليف النهائي.",
+    tag: "داخل المطبعة",
+  },
+  {
+    title: "طباعة الهدايا الدعائية",
+    description:
+      "طباعة مخصصة على المجات والتيشيرتات والكابات والأقلام والمنتجات الدعائية.",
+    tag: "الأكثر طلباً",
+  },
+  {
+    title: "حلول الطباعة للشركات",
+    description:
+      "مطبوعات وهوية مؤسسية متكاملة للشركات والمؤسسات بمختلف أحجامها.",
+    tag: "للشركات",
+  },
+  {
+    title: "حلول طباعة وإدارة الفعاليات",
+    description:
+      "تنسيق وتنفيذ جميع المطبوعات وتسليمها في الوقت المحدد لضمان نجاح الحدث بأعلى مستوى من الاحترافية.",
+    tag: "فعاليات",
+  },
+]
     },
     clients: {
-      eyebrow: "يثق بنا",
-      title: "علامات تجارية",
-      titleAccent: "اختارتنا",
+      eyebrow: " ",
+      title: "موضع ثقة ",
+      titleAccent: "عبر المنطقة",
       description:
-        "من الشركات الناشئة إلى العلامات الكبرى، يعتمد علينا عملاؤنا لتقديم أعمال إبداعية بجودة ثابتة.",
+        "حلولنا الإبداعية تدعم نمو وتطور الشركات من مصر إلى قلب الخليج وشمال أفريقيا. انضم إلى قائمة شركائنا المتميزين. من",
       notePrefix: "انضم إلى",
       noteAccent: "أكثر من 120 عميلا راضيا",
       noteSuffix: "اختاروا برينتو برس لاحتياجاتهم الإبداعية",
@@ -332,54 +355,90 @@ export const translations = {
       learnMore: "اعرف المزيد",
       items: [
         {
-          title: "كروت شخصية",
+          title: "الكتب",
           description:
-            "كروت فاخرة بتشطيبات سبوت يو في وفويل وبروز لترك انطباع أول قوي.",
-          tag: "الأكثر طلبا",
+            "طباعة وتجليد الكتب التعليمية والأكاديمية والروايات بمختلف الأحجام والتشطيبات.",
+          tag: "الأكثر طلباً",
         },
         {
-          title: "فلايرات",
+          title: "البروشورات",
           description:
-            "فلايرات بألوان جذابة لفعالياتك وعروضك وحملاتك التسويقية.",
+            "بروشورات احترافية متعددة الطيات لعرض المنتجات والخدمات والحملات التسويقية.",
+          tag: "رائج",
+        },
+        {
+          title: "الشهادات",
+          description:
+            "شهادات تقدير وتكريم ومشاركة مطبوعة بدقة عالية وجودة استثنائية.",
+          tag: "جودة عالية",
+        },
+        {
+          title: "الفلايرات",
+          description:
+            "فلايرات دعائية جذابة تساعدك على الوصول إلى جمهورك بطريقة فعالة.",
           tag: "أفضل قيمة",
         },
         {
-          title: "بروشورات",
+          title: "الكتالوجات",
           description:
-            "بروشورات متعددة الطيات والصفحات تعرض قصة علامتك بشكل احترافي.",
+            "كتالوجات أنيقة تساعد على عرض منتجاتك وخدماتك بطريقة احترافية.",
           tag: null,
         },
         {
-          title: "رول أب بانر",
+          title: "الكروت الشخصية",
           description:
-            "بانرات عالية الدقة للمعارض ونقاط البيع والفعاليات.",
-          tag: "تسليم سريع",
+            "بطاقات أعمال فاخرة تعكس هوية علامتك التجارية وتترك انطباعاً مميزاً.",
+          tag: "احترافي",
         },
         {
-          title: "علب تغليف",
+          title: "الأظرف",
           description:
-            "تغليف مخصص يرفع قيمة منتجك ويمنح العميل تجربة مميزة.",
+            "أظرف مطبوعة بشعار المؤسسة وهوية بصرية متكاملة للمراسلات الرسمية.",
+          tag: null,
+        },
+        {
+          title: "ورق المراسلات",
+          description:
+            "ورق مراسلات رسمي يعزز احترافية شركتك ويقوي هويتها المؤسسية.",
+          tag: null,
+        },
+        {
+          title: "الفولدرات",
+          description:
+            "فولدرات احترافية لحفظ وتنظيم المستندات والعروض التقديمية.",
+          tag: "للشركات",
+        },
+        {
+          title: "المطويات",
+          description:
+            "مطويات تعريفية وتسويقية بأشكال متنوعة تناسب مختلف الاستخدامات.",
+          tag: null,
+        },
+        {
+          title: "المجات",
+          description:
+            "طباعة احترافية على المجات للهدايا التذكارية والحملات الدعائية.",
+          tag: "رائج",
+        },
+        {
+          title: "التيشيرتات",
+          description:
+            "طباعة الشعارات والتصميمات على التيشيرتات بجودة عالية وألوان ثابتة.",
           tag: "مخصص",
         },
         {
-          title: "استيكرات وليبلز",
+          title: "الكابات",
           description:
-            "استيكرات وليبلز بأي شكل، مقاومة للماء ومناسبة للاستخدام الطويل.",
+            "كابات دعائية مطبوعة تعزز انتشار علامتك التجارية في الفعاليات.",
+          tag: "مخصص",
+        },
+        {
+          title: "الأقلام",
+          description:
+            "أقلام دعائية تحمل شعار شركتك وتُعد وسيلة تسويقية عملية وفعالة.",
           tag: null,
         },
-        {
-          title: "لافتات خارجية",
-          description:
-            "حروف بارزة ولافتات مضيئة ولوحات خارجية تجذب الانتباه.",
-          tag: "فاخر",
-        },
-        {
-          title: "مواد دعائية",
-          description:
-            "هدايا ومطبوعات دعائية تحمل علامتك وتبقيها قريبة من جمهورك.",
-          tag: "رائج",
-        },
-      ],
+      ]
     },
     contact: {
       eyebrow: "تواصل معنا",

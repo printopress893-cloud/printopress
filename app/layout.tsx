@@ -51,6 +51,7 @@ export default function RootLayout({
           href="https://fonts.gstatic.com"
           crossOrigin="anonymous"
         />
+        <link rel="icon" type="image/x-icon" href="https://res.cloudinary.com/dniuspri6/image/upload/v1782488257/ChatGPT_Image_Jun_26_2026_06_37_02_PM_jphazu.png" />
         <link
           href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700&family=Syne:wght@400;500;600;700;800&display=swap"
           rel="stylesheet"

@@ -3,12 +3,12 @@
 import { motion } from "framer-motion";
 import { useState } from "react";
 import {
-  Palette,
   Printer,
-  Package,
-  Megaphone,
-  TrendingUp,
-  Maximize2,
+  Scissors,
+  Gift,
+  Building2,
+  BookOpen,
+ CalendarDays,
   ArrowUpRight,
 } from "lucide-react";
 import { fadeUp, staggerContainer } from "@/lib/animations";
@@ -16,67 +16,61 @@ import { useLanguage } from "@/lib/i18n";
 import DetailModal from "@/components/ui/DetailModal";
 
 const services = [
-  {
-    icon: Palette,
-    title: "Branding",
-    description:
-      "Build a brand identity that tells your story. From logo design to full visual systems — we create brands people remember and trust.",
-    color: "#00FFFF",
-    bg: "rgba(0,255,255,0.07)",
-    accent: "#00FFFF",
-    tag: "Identity",
-  },
-  {
-    icon: Printer,
-    title: "Printing Solutions",
-    description:
-      "State-of-the-art digital and offset printing with meticulous quality control. Every detail, every color — pixel perfect.",
-    color: "#FF00FF",
-    bg: "rgba(255,0,255,0.07)",
-    accent: "#FF00FF",
-    tag: "Production",
-  },
-  {
-    icon: Package,
-    title: "Packaging Design",
-    description:
-      "Packaging that protects your product and amplifies your brand. We design boxes, bags, and wrappers that convert at the shelf.",
-    color: "#FFFF00",
-    bg: "rgba(255,255,0,0.07)",
-    accent: "#FFFF00",
-    tag: "Design",
-  },
-  {
-    icon: Megaphone,
-    title: "Advertising Campaigns",
-    description:
-      "Strategic advertising campaigns across print and digital that cut through the noise and get your message seen.",
-    color: "#000000",
-    bg: "rgba(0,0,0,0.07)",
-    accent: "#000000",
-    tag: "Strategy",
-  },
-  {
-    icon: TrendingUp,
-    title: "Digital Marketing",
-    description:
-      "SEO, social media, PPC, and content marketing that grow your digital presence and drive qualified leads.",
-    color: "#00FFFF",
-    bg: "rgba(0,255,255,0.07)",
-    accent: "#00FFFF",
-    tag: "Growth",
-  },
-  {
-    icon: Maximize2,
-    title: "Large Format Printing",
-    description:
-      "Billboards, banners, vehicle wraps, exhibition stands — commanding visual presence at any scale, indoors or out.",
-    color: "#FF00FF",
-    bg: "rgba(255,0,255,0.07)",
-    accent: "#FF00FF",
-    tag: "Large Scale",
-  },
+{
+icon: Printer,
+title: "Digital Printing",
+description:
+"Professional digital printing for books, brochures, catalogs, certificates, flyers, and commercial materials.",
+gradient: "linear-gradient(135deg, #58C4F6, #FF5FA2)",
+bg: "rgba(88,196,246,0.07)",
+accent: "#58C4F6",
+tag: "Core Service",
+},
+
+{
+icon: Scissors,
+title: "Print Finishing",
+description:
+"Complete finishing solutions including cutting, lamination, binding, stapling, perforation, creasing, and packaging.",
+gradient: "linear-gradient(135deg, #FF5FA2, #FFD447)",
+bg: "rgba(255,95,162,0.07)",
+accent: "#FF5FA2",
+tag: "In-House",
+},
+
+{
+icon: Gift,
+title: "Promotional Gift Printing",
+description:
+"Custom printing on mugs, t-shirts, caps, pens, and promotional merchandise for businesses and events.",
+gradient: "linear-gradient(135deg, #FFD447, #58C4F6)",
+bg: "rgba(255,212,71,0.07)",
+accent: "#FFD447",
+tag: "Popular",
+},
+
+{
+icon: Building2,
+title: "Corporate Printing",
+description:
+"Business cards, envelopes, letterheads, folders, certificates, and complete corporate stationery solutions.",
+gradient: "linear-gradient(135deg, #5B3A29, #FF5FA2)",
+bg: "rgba(91,58,41,0.07)",
+accent: "#5B3A29",
+tag: "Business",
+},
+{
+  icon: CalendarDays,
+  title: "Event Printing Solutions",
+  description:
+    "Complete printing solutions for conferences, exhibitions, corporate events, and special occasions—from badges to banners and branded materials.",
+  gradient: "linear-gradient(135deg, #58C4F6, #FFD447)",
+  bg: "rgba(88,196,246,0.07)",
+  accent: "#58C4F6",
+  tag: "Events",
+}
 ];
+
 
 const serviceImages = [
   [
@@ -106,71 +100,73 @@ const serviceImages = [
 ] as const;
 
 const serviceDetails = {
-  en: [
-    [
-      "Complete brand strategy, logo design, color palette, typography, and visual guidelines.",
-      "Ready-to-use assets for social media, packaging, signage, stationery, and campaigns.",
-      "Built to keep your brand consistent across print, digital, and physical touchpoints.",
-    ],
-    [
-      "Digital and offset production for small batches, high-volume orders, and urgent jobs.",
-      "Color matching, paper selection, finishing options, and quality checks before delivery.",
-      "Ideal for cards, flyers, catalogs, brochures, folders, menus, and corporate material.",
-    ],
-    [
-      "Structural and visual packaging concepts for boxes, bags, sleeves, labels, and wraps.",
-      "Material recommendations, print-ready dielines, mockups, and production supervision.",
-      "Designed to protect the product and stand out clearly on shelves and deliveries.",
-    ],
-    [
-      "Campaign concepts, key visuals, copy direction, print assets, and digital adaptations.",
-      "Media-ready designs for outdoor, social media, retail, events, and launch campaigns.",
-      "Clear messaging that connects your offer with the audience you want to reach.",
-    ],
-    [
-      "Social media design, content direction, ads, landing visuals, and performance reporting.",
-      "SEO-friendly content and campaign assets that support lead generation and awareness.",
-      "A practical growth plan shaped around your budget, audience, and business goals.",
-    ],
-    [
-      "Large-format printing for banners, booths, signs, wall graphics, vehicles, and displays.",
-      "Durable materials, weather-ready finishes, and installation support when needed.",
-      "High-impact visuals prepared at the right resolution and scale for each location.",
-    ],
-  ],
-  ar: [
-    [
-      "استراتيجية علامة كاملة تشمل الشعار، الألوان، الخطوط، وقواعد الاستخدام البصري.",
-      "ملفات جاهزة للسوشيال ميديا، التغليف، اللافتات، المطبوعات، والحملات.",
-      "نحافظ على اتساق شكل العلامة في كل نقطة ظهور مطبوعة أو رقمية أو ميدانية.",
-    ],
-    [
-      "طباعة ديجيتال وأوفست للطلبات الصغيرة والكميات الكبيرة والأعمال العاجلة.",
-      "مطابقة ألوان، اختيار خامات، تشطيبات متنوعة، ومراجعة جودة قبل التسليم.",
-      "مناسبة للكروت، الفلايرات، الكتالوجات، البروشورات، الفولدرات، والمنيوهات.",
-    ],
-    [
-      "تصميم هيكلي وبصري للعلب، الأكياس، الأغطية، الليبلز، والتغليف المخصص.",
-      "اقتراح خامات، داي لاين جاهز للطباعة، موك آب، ومتابعة تنفيذ الإنتاج.",
-      "تصميم يحمي المنتج ويجعله واضحا ومميزا على الرف أو أثناء التوصيل.",
-    ],
-    [
-      "أفكار حملات، Key Visual، اتجاه كتابة، مواد مطبوعة، ونسخ رقمية للحملة.",
-      "تصميمات جاهزة للخارجي، السوشيال ميديا، نقاط البيع، الفعاليات، والإطلاقات.",
-      "رسالة واضحة تربط عرضك بالجمهور الذي تريد الوصول إليه.",
-    ],
-    [
-      "تصميم سوشيال ميديا، اتجاه محتوى، إعلانات، واجهات هبوط، وتقارير أداء.",
-      "محتوى وأصول تسويقية تساعد على الوعي بالعلامة وجذب العملاء المحتملين.",
-      "خطة نمو عملية مبنية على ميزانيتك وجمهورك وأهداف مشروعك.",
-    ],
-    [
-      "طباعة كبيرة الحجم للبنرات، الأجنحة، اللافتات، الجرافيك الجداري، السيارات، والديسبلاي.",
-      "خامات قوية، تشطيبات مناسبة للعوامل الجوية، ودعم تركيب عند الحاجة.",
-      "تصميمات عالية التأثير مجهزة بالدقة والمقاس المناسبين لكل موقع.",
-    ],
-  ],
+en: [
+[
+"Professional digital printing for books, brochures, catalogs, certificates, flyers, and commercial materials.",
+"Accurate color reproduction, premium paper options, and fast production turnaround.",
+"Suitable for both short-run and medium-volume printing projects.",
+],
+
+
+[
+  "Complete finishing services including cutting, lamination, binding, stapling, perforation, creasing, and packaging.",
+  "All finishing processes are handled in-house to ensure maximum quality control.",
+  "Delivering a polished and professional final product ready for use.",
+],
+
+[
+  "Custom printing on mugs, t-shirts, caps, pens, and promotional merchandise.",
+  "Perfect for exhibitions, marketing campaigns, giveaways, and corporate events.",
+  "Designed to increase brand visibility and leave a lasting impression.",
+],
+
+[
+  "Business cards, envelopes, letterheads, folders, certificates, and corporate stationery solutions.",
+  "Consistent branding across all printed materials to strengthen your professional image.",
+  "Ideal for companies, institutions, educational organizations, and government entities.",
+],
+
+[
+  "Complete printing solutions for conferences, exhibitions, corporate events, and promotional campaigns.",
+  "Production of badges, certificates, banners, backdrops, roll-ups, invitations, branded gifts, and event materials.",
+  "Professional planning, coordination, and on-time delivery to ensure every event runs smoothly.",
+],
+],
+
+ar: [
+[
+"طباعة رقمية احترافية للكتب والبروشورات والكتالوجات والشهادات والفلايرات والمطبوعات التجارية.",
+"ألوان دقيقة وخامات متنوعة وجودة عالية مع سرعة في تنفيذ الطلبات.",
+"مناسبة للكميات الصغيرة والمتوسطة مع الحفاظ على ثبات الجودة في جميع المطبوعات.",
+],
+
+[
+  "خدمات تشطيب متكاملة تشمل القص والسلوفان والتجليد والدبوس والريجة والبشر والتغليف النهائي.",
+  "تنفيذ جميع مراحل التشطيب داخل مقر العمل لضمان أعلى مستويات الجودة والدقة.",
+  "تسليم المنتج النهائي بشكل احترافي وجاهز للاستخدام أو التوزيع مباشرة.",
+],
+
+[
+  "طباعة مخصصة على المجات والتيشيرتات والكابات والأقلام والمنتجات الدعائية المختلفة.",
+  "مناسبة للفعاليات والمعارض والهدايا التسويقية والحملات الإعلانية.",
+  "تساعد على تعزيز انتشار العلامة التجارية وترك انطباع مميز لدى العملاء.",
+],
+
+[
+  "حلول متكاملة للمطبوعات المؤسسية تشمل الكروت الشخصية والأظرف وورق المراسلات والفولدرات والشهادات.",
+  "تنفيذ مطبوعات تعكس الهوية البصرية للشركة بصورة احترافية ومتناسقة.",
+  "خدمة مثالية للشركات والمؤسسات التعليمية والهيئات الحكومية والخاصة.",
+],
+
+[
+  "حلول متكاملة لطباعة جميع مستلزمات المؤتمرات والمعارض والفعاليات والمناسبات الخاصة.",
+  "تنفيذ البادجات والشهادات والبنرات وخلفيات المسرح والدعوات والهدايا الدعائية وجميع المطبوعات الخاصة بالفعاليات.",
+  "تنسيق وتنفيذ جميع المطبوعات وتسليمها في الوقت المحدد لضمان نجاح الحدث بأعلى مستوى من الاحترافية.",
+]
+
+],
 } as const;
+
 
 export default function ServicesSection() {
   const { t, language } = useLanguage();
@@ -276,7 +272,7 @@ export default function ServicesSection() {
               {/* Icon */}
               <div
                 className="relative w-14 h-14 rounded-2xl flex items-center justify-center mb-6 shadow-lg"
-                style={{ background: service.color }}
+                style={{ background: service.gradient }}
               >
                 <service.icon className="w-6 h-6 text-white" />
               </div>
@@ -325,7 +321,7 @@ export default function ServicesSection() {
               {/* Bottom accent */}
               <div
                 className="absolute bottom-0 left-0 right-0 h-1 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-b-3xl"
-                style={{ background: service.color }}
+                style={{ background: service.gradient }}
               />
             </motion.div>
           );

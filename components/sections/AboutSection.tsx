@@ -10,7 +10,6 @@ const stats = [
   { icon: Award, value: 500, suffix: "+", label: "Projects Delivered", color: "#00FFFF" },
   { icon: Users, value: 120, suffix: "+", label: "Happy Clients", color: "#FF00FF" },
   { icon: Target, value: 10, suffix: "+", label: "Years Experience", color: "#FFFF00" },
-  { icon: Users, value: 25, suffix: "+", label: "Team Members", color: "#000000" },
 ];
 
 function Counter({ target, suffix }: { target: number; suffix: string }) {
@@ -145,7 +144,7 @@ export default function AboutSection() {
                 className="relative"
               >
                 {/* Main image block */}
-                <div
+                <img
                   className="rounded-3xl overflow-hidden shadow-2xl"
                   style={{
                     background: "#000000",
@@ -154,60 +153,20 @@ export default function AboutSection() {
                     alignItems: "center",
                     justifyContent: "center",
                   }}
-                >
+                  src="https://res.cloudinary.com/dniuspri6/image/upload/v1782375055/WhatsApp_Image_2026-06-24_at_6.56.13_PM_vwjqgp.jpg"
+                  alt="Brand Visual"
+                />
                 {/* Abstract brand visual */}
                 <div className="relative w-full h-full flex items-center justify-center p-10">
                   {/* Big letter P */}
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <span
-                      className="font-bold select-none"
-                      style={{
-                        fontFamily: "'Syne', sans-serif",
-                        fontSize: "280px",
-                        lineHeight: 1,
-                        background: "rgba(255,255,255,0.04)",
-                        WebkitBackgroundClip: "text",
-                        WebkitTextFillColor: "transparent",
-                        backgroundClip: "text",
-                        color: "transparent",
-                      }}
-                    >
-                      P
-                    </span>
-                  </div>
+                  
                   {/* Floating colored circles */}
                   <div
                   className="absolute top-10 left-10 w-24 h-24 rounded-full" style={{ background: "#00FFFF", filter: "blur(2px)" }} />
                 <div
                   className="absolute bottom-10 right-10 w-20 h-20 rounded-full" style={{ background: "#FF00FF", filter: "blur(2px)" }} />
-                <div
-                  className="absolute top-1/2 right-10 w-14 h-14 rounded-full" style={{ background: "#FFFF00", filter: "blur(2px)" }} />
-
-                  {/* Center logo */}
-                  <div className="relative z-10 text-center">
-                    <div
-                      className="w-24 h-24 rounded-3xl mx-auto mb-4 flex items-center justify-center shadow-2xl"
-                      style={{ background: "linear-gradient(135deg, #58C4F6, #FF5FA2)" }}
-                    >
-                      <span
-                        className="text-white text-4xl font-bold"
-                        style={{ fontFamily: "'Syne', sans-serif" }}
-                      >
-                        P
-                      </span>
-                    </div>
-                    <div
-                      className="text-white text-2xl font-bold"
-                      style={{ fontFamily: "'Syne', sans-serif" }}
-                    >
-                      Printo Press
-                    </div>
-                    <div className="text-white/50 text-sm mt-1">
-                      {t.about.studioTag}
-                    </div>
-                  </div>
                 </div>
-              </div>
+              
 
               {/* Floating badge */}
               <motion.div
@@ -260,7 +219,7 @@ export default function AboutSection() {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.3 }}
-          className="grid grid-cols-2 lg:grid-cols-4 gap-6"
+          className="grid grid-cols-2 lg:grid-cols-3 gap-6"
         >
           {stats.map((stat, i) => (
             <motion.div

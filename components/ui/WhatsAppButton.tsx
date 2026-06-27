@@ -8,7 +8,7 @@ import { useLanguage } from "@/lib/i18n";
 export default function WhatsAppButton() {
   const [showTooltip, setShowTooltip] = useState(false);
   const { t, language } = useLanguage();
-  const whatsappUrl = `https://wa.me/201212528574?text=${encodeURIComponent(
+  const whatsappUrl = `https://wa.me/201055755003?text=${encodeURIComponent(
     t.whatsapp.urlText
   )}`;
 
