@@ -19,7 +19,8 @@ dist-ssr
 # Wrangler / Cloudflare
 .wrangler/
 .dev.vars
-.next
+next
+out
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json
